@@ -435,7 +435,7 @@ Py::Object pysvn_client::cmd_diff( const Py::Tuple &a_args, const Py::Dict &a_kw
     }
 
     // cannot convert to Unicode as we have no idea of the encoding of the bytes
-    return Py::String( stringbuf->data, (int)stringbuf->len );
+    return Py::Bytes( stringbuf->data, (int)stringbuf->len );
 }
 
 #if defined( PYSVN_HAS_CLIENT_DIFF_PEG )
