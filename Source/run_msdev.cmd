@@ -1,0 +1,1 @@
+msdev pysvn.dsw %*

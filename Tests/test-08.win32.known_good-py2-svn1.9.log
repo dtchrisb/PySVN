@@ -1,0 +1,135 @@
+WorkDir: C:\Users\barry\wc\svn\PySVN\Extension
+PYTHON: c:\python27.Win64\python.exe
+Username: barry
+Info: PYSVN CMD c:\python27.Win64\python.exe C:\Users\barry\wc\svn\PySVN\Extension\Examples\Client\svn_cmd.py --pysvn-testing 01.01.00 --config-dir b:\configdir
+
+Info: CMD mkdir testroot-08
+
+Info: CMD subst b: C:\Users\barry\wc\svn\PySVN\Extension\Tests\testroot-08
+
+Info: CMD cd /d b:\
+
+Info: CMD mkdir tmp
+
+Info: CMD svnadmin create b:\repos
+Info: Setup - mkdir
+ 
+Info: PYSVN CMD mkdir file:///b:/repos/trunk -m "test-08 add trunk" 
+commit_finalizing .
+Info: Setup - checkout wc1
+ 
+Info: PYSVN CMD checkout file:///b:/repos/trunk b:\wc1 
+update_started B:/wc1
+Checked out revision 1
+
+Info: CMD cd /d b:\wc1
+Info: Setup - add files and folders
+ 
+Info: PYSVN CMD mkdir folder1 
+A B:/wc1/folder1
+ 
+Info: PYSVN CMD mkdir folder2 
+A B:/wc1/folder2
+ 
+Info: PYSVN CMD mkdir folder2\sub2 
+A B:/wc1/folder2/sub2
+Info: Create File folder1\file-a.txt - test add file 1     
+ 
+Info: PYSVN CMD add folder1\file-a.txt 
+A B:/wc1/folder1/file-a.txt
+Info: Create File folder2\file-b.txt - test add file 2     
+ 
+Info: PYSVN CMD add folder2\file-b.txt 
+A B:/wc1/folder2/file-b.txt
+Info: Create File folder2\sub2\file-b.txt - test add file 2     
+ 
+Info: PYSVN CMD add folder2\sub2\file-b.txt 
+A B:/wc1/folder2/sub2/file-b.txt
+ 
+Info: PYSVN CMD checkin -m "commit added files" 
+A B:/wc1/folder1
+A B:/wc1/folder1/file-a.txt
+A B:/wc1/folder2
+A B:/wc1/folder2/file-b.txt
+A B:/wc1/folder2/sub2
+A B:/wc1/folder2/sub2/file-b.txt
+commit_finalizing .
+Revision 2
+Info: Append File folder1\file-a.txt - test add line 2     
+ 
+Info: PYSVN CMD diff folder1\file-a.txt 
+
+Info: CMD type b:\diff-1.patch
+Index: folder1/file-a.txt
+===================================================================
+--- folder1/file-a.txt	(revision 2)
++++ folder1/file-a.txt	(working copy)
+@@ -1 +1,2 @@
+ test add file 1
++test add line 2
+
+
+Info: CMD type folder1\file-a.txt
+test add file 1
+test add line 2
+ 
+Info: PYSVN CMD checkout file:///b:/repos/trunk b:\wc2 
+A B:/wc2/folder1
+A B:/wc2/folder1/file-a.txt
+A B:/wc2/folder2
+A B:/wc2/folder2/file-b.txt
+A B:/wc2/folder2/sub2
+A B:/wc2/folder2/sub2/file-b.txt
+U B:/wc2
+update_started B:/wc2
+Checked out revision 2
+
+Info: CMD cd /d b:\wc2
+
+Info: CMD type folder1\file-a.txt
+test add file 1
+
+b:\wc2 >call :cmd_pysvn patch b:\diff-1.patch b:\wc2 --no-remove-tempfiles 
+
+b:\wc2 >echo.  1>&2 
+ 
+
+b:\wc2 >echo Info: PYSVN CMD patch b:\diff-1.patch b:\wc2 --no-remove-tempfiles  1>&2 
+Info: PYSVN CMD patch b:\diff-1.patch b:\wc2 --no-remove-tempfiles 
+
+b:\wc2 >c:\python27.Win64\python.exe C:\Users\barry\wc\svn\PySVN\Extension\Examples\Client\svn_cmd.py --pysvn-testing 01.01.00 --config-dir b:\configdir patch b:\diff-1.patch b:\wc2 --no-remove-tempfiles 
+patch B:/wc2/folder1/file-a.txt
+patch_applied_hunk B:/wc2/folder1/file-a.txt
+
+b:\wc2 >goto :eof 
+
+b:\wc2 >call :cmd_shell type folder1\file-a.txt 
+
+b:\wc2 >echo.
+
+
+b:\wc2 >echo Info: CMD type folder1\file-a.txt 
+Info: CMD type folder1\file-a.txt
+
+b:\wc2 >type folder1\file-a.txt 
+test add file 1
+test add line 2
+
+b:\wc2 >goto :eof 
+
+b:\wc2 >call :cmd_shell fc b:\wc1\folder1\file-a.txt b:\wc2\folder1\file-a.txt 
+
+b:\wc2 >echo.
+
+
+b:\wc2 >echo Info: CMD fc b:\wc1\folder1\file-a.txt b:\wc2\folder1\file-a.txt 
+Info: CMD fc b:\wc1\folder1\file-a.txt b:\wc2\folder1\file-a.txt
+
+b:\wc2 >fc b:\wc1\folder1\file-a.txt b:\wc2\folder1\file-a.txt 
+Comparing files B:\WC1\FOLDER1\file-a.txt and B:\WC2\FOLDER1\FILE-A.TXT
+FC: no differences encountered
+
+
+b:\wc2 >goto :eof 
+
+b:\wc2 >goto :eof 

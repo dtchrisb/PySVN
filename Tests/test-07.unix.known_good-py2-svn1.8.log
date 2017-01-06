@@ -1,0 +1,89 @@
+WorkDir: /Users/barry/wc/svn/pysvn/Extension
+PYTHON: /Library/Frameworks/Python.framework/Versions/2.6/Resources/Python.app/Contents/MacOS/Python
+Username: barry
+Info: CWD: /Users/barry/wc/svn/pysvn/Extension/Tests
+Info: Command: mkdir testroot-07
+Info: CWD: /Users/barry/wc/svn/pysvn/Extension/Tests
+Info: Command: cd testroot-07
+Info: CWD: /Users/barry/wc/svn/pysvn/Extension/Tests/testroot-07
+Info: Command: mkdir tmp
+Info: PYSVN command /Library/Frameworks/Python.framework/Versions/2.6/Resources/Python.app/Contents/MacOS/Python /Users/barry/wc/svn/pysvn/Extension/Examples/Client/svn_cmd.py --pysvn-testing 01.05.00 --config-dir /Users/barry/wc/svn/pysvn/Extension/Tests/testroot-07/configdir
+Info: CWD: /Users/barry/wc/svn/pysvn/Extension/Tests/testroot-07
+Info: Command: svnadmin create /Users/barry/wc/svn/pysvn/Extension/Tests/testroot-07/repos
+Info: Setup - mkdir
+Info: CWD: /Users/barry/wc/svn/pysvn/Extension/Tests/testroot-07
+Info: pysvn command: mkdir file:///Users/barry/wc/svn/pysvn/Extension/Tests/testroot-07/repos/trunk -m test-07 add trunk
+Info: CWD: /Users/barry/wc/svn/pysvn/Extension/Tests/testroot-07
+Info: pysvn command: mkdir file:///Users/barry/wc/svn/pysvn/Extension/Tests/testroot-07/repos/trunk/test -m test-07 add test
+Info: Setup - checkout wc1
+Info: CWD: /Users/barry/wc/svn/pysvn/Extension/Tests/testroot-07
+Info: pysvn command: checkout file:///Users/barry/wc/svn/pysvn/Extension/Tests/testroot-07/repos/trunk /Users/barry/wc/svn/pysvn/Extension/Tests/testroot-07/wc1
+A /Users/barry/wc/svn/pysvn/Extension/Tests/testroot-07/wc1/test
+U /Users/barry/wc/svn/pysvn/Extension/Tests/testroot-07/wc1
+update_started /Users/barry/wc/svn/pysvn/Extension/Tests/testroot-07/wc1
+Checked out revision 2
+Info: CWD: /Users/barry/wc/svn/pysvn/Extension/Tests/testroot-07
+Info: Command: cd /Users/barry/wc/svn/pysvn/Extension/Tests/testroot-07/wc1/test
+Info: Setup - add files
+Info: CWD: /Users/barry/wc/svn/pysvn/Extension/Tests/testroot-07/wc1/test
+Info: pysvn command: add file_a1.txt
+A /Users/barry/wc/svn/pysvn/Extension/Tests/testroot-07/wc1/test/file_a1.txt
+Info: CWD: /Users/barry/wc/svn/pysvn/Extension/Tests/testroot-07/wc1/test
+Info: pysvn command: checkin -m commit added files
+A /Users/barry/wc/svn/pysvn/Extension/Tests/testroot-07/wc1/test/file_a1.txt
+Revision 3
+Info: CWD: /Users/barry/wc/svn/pysvn/Extension/Tests/testroot-07/wc1/test
+Info: pysvn command: add file_a2.txt
+A /Users/barry/wc/svn/pysvn/Extension/Tests/testroot-07/wc1/test/file_a2.txt
+Info: CWD: /Users/barry/wc/svn/pysvn/Extension/Tests/testroot-07/wc1/test
+Info: pysvn command: checkin -m commit added files
+A /Users/barry/wc/svn/pysvn/Extension/Tests/testroot-07/wc1/test/file_a2.txt
+Revision 4
+Info: CWD: /Users/barry/wc/svn/pysvn/Extension/Tests/testroot-07/wc1/test
+Info: pysvn command: add file_b1.txt
+A /Users/barry/wc/svn/pysvn/Extension/Tests/testroot-07/wc1/test/file_b1.txt
+Info: CWD: /Users/barry/wc/svn/pysvn/Extension/Tests/testroot-07/wc1/test
+Info: pysvn command: checkin -m commit added files
+A /Users/barry/wc/svn/pysvn/Extension/Tests/testroot-07/wc1/test/file_b1.txt
+Revision 5
+Info: CWD: /Users/barry/wc/svn/pysvn/Extension/Tests/testroot-07/wc1/test
+Info: pysvn command: add file_b2.txt
+A /Users/barry/wc/svn/pysvn/Extension/Tests/testroot-07/wc1/test/file_b2.txt
+Info: CWD: /Users/barry/wc/svn/pysvn/Extension/Tests/testroot-07/wc1/test
+Info: pysvn command: checkin -m commit added files
+A /Users/barry/wc/svn/pysvn/Extension/Tests/testroot-07/wc1/test/file_b2.txt
+Revision 6
+Info: CWD: /Users/barry/wc/svn/pysvn/Extension/Tests/testroot-07/wc1/test
+Info: pysvn command: status --verbose /Users/barry/wc/svn/pysvn/Extension/Tests/testroot-07/wc1
+               2      2 barry          /Users/barry/wc/svn/pysvn/Extension/Tests/testroot-07/wc1
+               2      2 barry          /Users/barry/wc/svn/pysvn/Extension/Tests/testroot-07/wc1/test
+               3      3 barry          /Users/barry/wc/svn/pysvn/Extension/Tests/testroot-07/wc1/test/file_a1.txt
+               4      4 barry          /Users/barry/wc/svn/pysvn/Extension/Tests/testroot-07/wc1/test/file_a2.txt
+               5      5 barry          /Users/barry/wc/svn/pysvn/Extension/Tests/testroot-07/wc1/test/file_b1.txt
+               6      6 barry          /Users/barry/wc/svn/pysvn/Extension/Tests/testroot-07/wc1/test/file_b2.txt
+Info: running test_07_copy2
+Info: Copy2 with no revision and no peg_revision
+Info: Copy2 with no peg_revision
+Info: Copy2
+Info: Copy2 will raise error
+Info: Error: 'Operation does not support multiple sources'
+Info: Code: 195014, Message: 'Operation does not support multiple sources'
+Info: running test_07_move2
+Info: Move2 will succeed
+Info: Move2 will raise error
+Info: Error: 'Operation does not support multiple sources'
+Info: Code: 195014, Message: 'Operation does not support multiple sources'
+Info: running test_07_changelist
+After add_to_changelist show all
+   changelist-one /Users/barry/wc/svn/pysvn/Extension/Tests/testroot-07/wc1/test/file_a1.txt
+   changelist-two /Users/barry/wc/svn/pysvn/Extension/Tests/testroot-07/wc1/test/file_a2.txt
+   changelist-one /Users/barry/wc/svn/pysvn/Extension/Tests/testroot-07/wc1/test/file_b1.txt
+   changelist-two /Users/barry/wc/svn/pysvn/Extension/Tests/testroot-07/wc1/test/file_b2.txt
+After add_to_changelist show changelist-two
+   changelist-two /Users/barry/wc/svn/pysvn/Extension/Tests/testroot-07/wc1/test/file_a2.txt
+   changelist-two /Users/barry/wc/svn/pysvn/Extension/Tests/testroot-07/wc1/test/file_b2.txt
+After remove_from_changelists all changelist-two show all
+   changelist-one /Users/barry/wc/svn/pysvn/Extension/Tests/testroot-07/wc1/test/file_a1.txt
+   changelist-one /Users/barry/wc/svn/pysvn/Extension/Tests/testroot-07/wc1/test/file_b1.txt
+After remove_from_changelists all show all
+   changelist-one /Users/barry/wc/svn/pysvn/Extension/Tests/testroot-07/wc1/test/file_b1.txt

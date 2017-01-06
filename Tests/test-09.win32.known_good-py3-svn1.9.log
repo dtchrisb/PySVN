@@ -1,0 +1,50 @@
+WorkDir: C:\Users\barry\wc\svn\PySVN\Extension
+PYTHON: c:\python35.Win64\python.exe
+Username: barry
+Info: PYSVN CMD c:\python35.Win64\python.exe C:\Users\barry\wc\svn\PySVN\Extension\Examples\Client\svn_cmd.py --pysvn-testing 01.01.00 --config-dir b:\configdir
+
+Info: CMD mkdir testroot-09
+
+Info: CMD subst b: C:\Users\barry\wc\svn\PySVN\Extension\Tests\testroot-09
+
+Info: CMD cd /d b:\
+
+Info: CMD mkdir tmp
+
+Info: CMD svnadmin create b:\repos
+Info: Setup - mkdir
+ 
+Info: PYSVN CMD mkdir file:///b:/repos/trunk -m "test-09 add trunk" 
+commit_finalizing .
+Info: Setup - checkout wc1
+ 
+Info: PYSVN CMD checkout file:///b:/repos/trunk b:\wc1 
+update_started B:/wc1
+Checked out revision 1
+
+Info: CMD cd /d b:\wc1
+Info: Setup - add files and folders
+ 
+Info: PYSVN CMD mkdir folder1 
+A B:/wc1/folder1
+Info: Create File folder1\file-a.txt - test add file 1     
+ 
+Info: PYSVN CMD add folder1\file-a.txt 
+A B:/wc1/folder1/file-a.txt
+ 
+Info: PYSVN CMD checkin -m "commit added files" 
+A B:/wc1/folder1
+A B:/wc1/folder1/file-a.txt
+commit_finalizing .
+Revision 2
+The system cannot find the batch label specified - cmd_appendfile
+ 
+Info: PYSVN CMD diff folder1\file-a.txt 
+ 
+Info: PYSVN CMD annotate folder1\file-a.txt 
+A /trunk/folder1/file-a.txt
+1| r2 | barry | 2016-04-27T19:44:07.802434Z | test add file 1
+ 
+Info: PYSVN CMD annotate2 folder1\file-a.txt 
+A /trunk/folder1/file-a.txt
+1| r2 | test add file 1

@@ -1,0 +1,19 @@
+recursive-include Builder *
+recursive-include Docs *
+recursive-include Examples *
+recursive-include Import *
+recursive-include Kit *
+recursive-include Patches *
+recursive-include Source *
+recursive-include Tests *
+include INSTALL.html
+include LICENSE.txt
+exclude Source/pysvn/__init__.py
+exclude Source/pysvn/*.so
+exclude Source/*.o
+exclude Source/Makefile
+exclude Source/pysvn_docs.cpp
+exclude Source/pysvn_docs.hpp
+exclude Source/pysvn_version.hpp
+exclude Source/generate_svn_error_codes.hpp
+exclude Source/generate_svn_error_codes/generate_svn_error_codes

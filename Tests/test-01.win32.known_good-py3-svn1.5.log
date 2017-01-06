@@ -1,0 +1,877 @@
+WorkDir: C:\wc\pysvn\trunk\pysvn\Extension
+PYTHON: c:\python31\python.exe
+Username: barry
+Info: PYSVN CMD c:\python31\python.exe C:\wc\pysvn\trunk\pysvn\Extension\Examples\Client\svn_cmd.py --pysvn-testing 01.01.00 --config-dir b:\configdir
+
+Info: CMD mkdir testroot-01
+
+Info: CMD subst b: C:\wc\pysvn\trunk\pysvn\Extension\Tests\testroot-01
+
+Info: CMD cd /d b:\
+
+Info: CMD svnadmin create b:\repos
+Info: Test - mkdir
+
+Info: PYSVN CMD mkdir file:///b:/repos/trunk -m "test-01 add trunk"
+
+Info: PYSVN CMD mkdir file:///b:/repos/trunk/test -m "test-01 add test"
+Info: Test - ls
+
+Info: PYSVN CMD ls file:///b:/repos -v -R
+      2 barry           0 11-Oct-2009 19:16:22 file:///b:/repos/trunk
+      2 barry           0 11-Oct-2009 19:16:22 file:///b:/repos/trunk/test
+Info: Test - checkout
+
+Info: PYSVN CMD checkout file:///b:/repos/trunk b:\wc1
+A b:/wc1/test
+U b:/wc1
+Checked out revision 2
+
+Info: CMD dir b:\wc1 /s /b /a-h
+b:\wc1\test
+b:\wc1\.svn\entries
+b:\wc1\.svn\format
+b:\wc1\.svn\prop-base
+b:\wc1\.svn\props
+b:\wc1\.svn\text-base
+b:\wc1\.svn\tmp
+b:\wc1\.svn\tmp\prop-base
+b:\wc1\.svn\tmp\props
+b:\wc1\.svn\tmp\text-base
+b:\wc1\test\.svn\entries
+b:\wc1\test\.svn\format
+b:\wc1\test\.svn\prop-base
+b:\wc1\test\.svn\props
+b:\wc1\test\.svn\text-base
+b:\wc1\test\.svn\tmp
+b:\wc1\test\.svn\tmp\prop-base
+b:\wc1\test\.svn\tmp\props
+b:\wc1\test\.svn\tmp\text-base
+
+Info: CMD cd /d b:\wc1\test
+Info: Test - add
+Info: Create File file1.txt - test add file 1     
+Info: Create File file2.txt - test add file 2     
+Info: Create File file3.txt - test add file 3     
+Info: Create File file4.txt - test add file 4     
+Info: Create File file5.txt - test add file 5     
+
+Info: CMD mkdir folder1
+Info: Create File folder1\file7.txt - test add file 7     
+
+Info: CMD mkdir folder1\folder2
+Info: Create File folder1\folder2\file8.txt - test add file 8     
+
+Info: CMD mkdir folder3
+Info: Create File folder3\file9.txt - test add file 9     
+
+Info: CMD mkdir folder3\folder4
+Info: Create File folder3\folder4\file10.txt - test add file 10     
+
+Info: PYSVN CMD add file1.txt
+A file1.txt
+
+Info: PYSVN CMD add file2.txt
+A file2.txt
+
+Info: PYSVN CMD add file3.txt
+A file3.txt
+
+Info: PYSVN CMD add file4.txt
+A file4.txt
+
+Info: PYSVN CMD add --force file5.txt
+A file5.txt
+
+Info: PYSVN CMD add folder1
+A folder1
+A folder1/file7.txt
+A folder1/folder2
+A folder1/folder2/file8.txt
+
+Info: PYSVN CMD add --non-recursive folder3
+A folder3
+
+Info: PYSVN CMD checkin -m "commit added files"
+A test/file1.txt
+A test/file2.txt
+A test/file3.txt
+A test/file4.txt
+A test/file5.txt
+A test/folder1
+A test/folder1/file7.txt
+A test/folder1/folder2
+A test/folder1/folder2/file8.txt
+A test/folder3
+Revision 3
+Info: Test - update - get a new wc that will update
+
+Info: PYSVN CMD checkout file:///b:/repos/trunk b:\wc2
+A b:/wc2/test
+A b:/wc2/test/file1.txt
+A b:/wc2/test/file2.txt
+A b:/wc2/test/file3.txt
+A b:/wc2/test/file4.txt
+A b:/wc2/test/file5.txt
+A b:/wc2/test/folder1
+A b:/wc2/test/folder1/file7.txt
+A b:/wc2/test/folder1/folder2
+A b:/wc2/test/folder1/folder2/file8.txt
+A b:/wc2/test/folder3
+U b:/wc2
+Checked out revision 3
+Info: Test - - checkin a mod from wc1
+Info: Append File b:\wc1\test\file1.txt - line 2       
+
+Info: PYSVN CMD checkin -m "commit modified file"
+M test/file1.txt
+Revision 4
+
+Info: PYSVN CMD checkin -m "commit modified file"
+Nothing to commit
+Info: Test - update
+
+Info: PYSVN CMD update b:\wc2
+U b:/wc2
+U b:/wc2/test
+U b:/wc2/test/file1.txt
+Updated to revision 4
+Info: Test - the rest in lexical order
+Info: Test - annotate
+
+Info: PYSVN CMD annotate b:\wc2\test\file1.txt
+A /trunk/test/file1.txt
+A /trunk/test/file1.txt
+0| r3 | barry | 2009-10-11T18:16:28.490875Z | test add file 1
+1| r4 | barry | 2009-10-11T18:16:30.709625Z | line 2
+Info: Test - cat
+
+Info: PYSVN CMD cat -r head file:///b:/repos/trunk/test/file1.txt
+test add file 1
+line 2
+
+Info: Test - cleanup
+Info: Test - copy
+
+Info: PYSVN CMD mkdir file:///b:/repos/tags -m "test-01 add tags"
+Info: Create File msg.tmp - tag the trunk      
+
+Info: PYSVN CMD copy file:///b:/repos/trunk file:///b:/repos/tags/version1
+Log message
+--- -------
+
+Info: PYSVN CMD ls -v file:///b:/repos/tags
+      6 barry           0 11-Oct-2009 19:16:35 file:///b:/repos/tags/version1
+
+Info: PYSVN CMD copy b:\wc2\test\file1.txt b:\wc2\test\file1b.txt
+A b:/wc2/test/file1b.txt
+
+Info: PYSVN CMD propset svn:eol-style native b:\wc2\test\file1b.txt
+
+Info: PYSVN CMD checkin b:\wc2 -m "copy test"
+A wc2/test/file1b.txt
+Revision 7
+Info: Test - diff
+Info: Append File b:\wc2\test\file1b.txt - new line       
+
+Info: PYSVN CMD diff b:\wc2
+Index: b:/wc2/test/file1b.txt
+===================================================================
+--- b:/wc2/test/file1b.txt	(revision 7)
++++ b:/wc2/test/file1b.txt	(working copy)
+@@ -1,2 +1,3 @@
+ test add file 1
+ line 2
++new line
+
+Info: Test - export
+
+Info: PYSVN CMD export file:///b:/repos/trunk/test b:\export1.native
+A b:\export1.native
+A b:\export1.native/file1.txt
+A b:\export1.native/file1b.txt
+A b:\export1.native/file2.txt
+A b:\export1.native/file3.txt
+A b:\export1.native/file4.txt
+A b:\export1.native/file5.txt
+A b:\export1.native/folder1
+A b:\export1.native/folder1/file7.txt
+A b:\export1.native/folder1/folder2
+A b:\export1.native/folder1/folder2/file8.txt
+A b:\export1.native/folder3
+
+Info: PYSVN CMD export --native-eol CR file:///b:/repos/trunk/test b:\export1.cr
+A b:\export1.cr
+A b:\export1.cr/file1.txt
+A b:\export1.cr/file1b.txt
+A b:\export1.cr/file2.txt
+A b:\export1.cr/file3.txt
+A b:\export1.cr/file4.txt
+A b:\export1.cr/file5.txt
+A b:\export1.cr/folder1
+A b:\export1.cr/folder1/file7.txt
+A b:\export1.cr/folder1/folder2
+A b:\export1.cr/folder1/folder2/file8.txt
+A b:\export1.cr/folder3
+
+Info: PYSVN CMD export --native-eol LF file:///b:/repos/trunk/test b:\export1.lf
+A b:\export1.lf
+A b:\export1.lf/file1.txt
+A b:\export1.lf/file1b.txt
+A b:\export1.lf/file2.txt
+A b:\export1.lf/file3.txt
+A b:\export1.lf/file4.txt
+A b:\export1.lf/file5.txt
+A b:\export1.lf/folder1
+A b:\export1.lf/folder1/file7.txt
+A b:\export1.lf/folder1/folder2
+A b:\export1.lf/folder1/folder2/file8.txt
+A b:\export1.lf/folder3
+
+Info: PYSVN CMD export --native-eol CRLF file:///b:/repos/trunk/test b:\export1.crlf
+A b:\export1.crlf
+A b:\export1.crlf/file1.txt
+A b:\export1.crlf/file1b.txt
+A b:\export1.crlf/file2.txt
+A b:\export1.crlf/file3.txt
+A b:\export1.crlf/file4.txt
+A b:\export1.crlf/file5.txt
+A b:\export1.crlf/folder1
+A b:\export1.crlf/folder1/file7.txt
+A b:\export1.crlf/folder1/folder2
+A b:\export1.crlf/folder1/folder2/file8.txt
+A b:\export1.crlf/folder3
+
+Info: CMD dir /s /b b:\export1.native
+b:\export1.native\file1.txt
+b:\export1.native\file1b.txt
+b:\export1.native\file2.txt
+b:\export1.native\file3.txt
+b:\export1.native\file4.txt
+b:\export1.native\file5.txt
+b:\export1.native\folder1
+b:\export1.native\folder3
+b:\export1.native\folder1\file7.txt
+b:\export1.native\folder1\folder2
+b:\export1.native\folder1\folder2\file8.txt
+
+Info: CMD dir /s /b b:\export1.cr
+b:\export1.cr\file1.txt
+b:\export1.cr\file1b.txt
+b:\export1.cr\file2.txt
+b:\export1.cr\file3.txt
+b:\export1.cr\file4.txt
+b:\export1.cr\file5.txt
+b:\export1.cr\folder1
+b:\export1.cr\folder3
+b:\export1.cr\folder1\file7.txt
+b:\export1.cr\folder1\folder2
+b:\export1.cr\folder1\folder2\file8.txt
+
+Info: CMD dir /s /b b:\export1.lf
+b:\export1.lf\file1.txt
+b:\export1.lf\file1b.txt
+b:\export1.lf\file2.txt
+b:\export1.lf\file3.txt
+b:\export1.lf\file4.txt
+b:\export1.lf\file5.txt
+b:\export1.lf\folder1
+b:\export1.lf\folder3
+b:\export1.lf\folder1\file7.txt
+b:\export1.lf\folder1\folder2
+b:\export1.lf\folder1\folder2\file8.txt
+
+Info: CMD dir /s /b b:\export1.crlf
+b:\export1.crlf\file1.txt
+b:\export1.crlf\file1b.txt
+b:\export1.crlf\file2.txt
+b:\export1.crlf\file3.txt
+b:\export1.crlf\file4.txt
+b:\export1.crlf\file5.txt
+b:\export1.crlf\folder1
+b:\export1.crlf\folder3
+b:\export1.crlf\folder1\file7.txt
+b:\export1.crlf\folder1\folder2
+b:\export1.crlf\folder1\folder2\file8.txt
+Info: Test - import
+Info: Test - info
+
+Info: PYSVN CMD info b:\wc2\test
+Path: b:\wc2\test
+Name: .
+Url: file:///b:/repos/trunk/test
+Repository UUID: 2366d249-f026-ca4d-8d96-447fa5eb453f
+Revision: 4
+Node kind: directory
+Schedule: normal
+Last Changed Author: barry
+Last Changed Rev: 4
+Last Changed Date: 11-Oct-2009 19:16:30
+
+Info: PYSVN CMD info b:\wc2\test\file1.txt
+Path: b:\wc2\test\file1.txt
+Name: file1.txt
+Url: file:///b:/repos/trunk/test/file1.txt
+Repository UUID: 2366d249-f026-ca4d-8d96-447fa5eb453f
+Revision: 4
+Node kind: file
+Schedule: normal
+Last Changed Author: barry
+Last Changed Rev: 4
+Last Changed Date: 11-Oct-2009 19:16:30
+Text Last Updated: 11-Oct-2009 19:16:32
+Checksum: cb0b37e264ebcc467e9f37a069e034d7
+Info: Test - log
+
+Info: PYSVN CMD log b:\wc2
+------------------------------------------------------------
+rev 7: barry | 11-Oct-2009 19:16:38 | 1 lines
+copy test
+------------------------------------------------------------
+rev 4: barry | 11-Oct-2009 19:16:30 | 1 lines
+commit modified file
+------------------------------------------------------------
+rev 3: barry | 11-Oct-2009 19:16:28 | 1 lines
+commit added files
+------------------------------------------------------------
+rev 2: barry | 11-Oct-2009 19:16:22 | 1 lines
+test-01 add test
+------------------------------------------------------------
+rev 1: barry | 11-Oct-2009 19:16:21 | 1 lines
+test-01 add trunk
+------------------------------------------------------------
+Info: Test - ls
+
+Info: PYSVN CMD ls file:///b:/repos/trunk/test
+file:///b:/repos/trunk/test/file1.txt
+file:///b:/repos/trunk/test/file1b.txt
+file:///b:/repos/trunk/test/file2.txt
+file:///b:/repos/trunk/test/file3.txt
+file:///b:/repos/trunk/test/file4.txt
+file:///b:/repos/trunk/test/file5.txt
+file:///b:/repos/trunk/test/folder1
+file:///b:/repos/trunk/test/folder3
+
+Info: PYSVN CMD ls -v file:///b:/repos/trunk/test
+      4 barry          25 11-Oct-2009 19:16:30 file:///b:/repos/trunk/test/file1.txt
+      7 barry          23 11-Oct-2009 19:16:38 file:///b:/repos/trunk/test/file1b.txt
+      3 barry          17 11-Oct-2009 19:16:28 file:///b:/repos/trunk/test/file2.txt
+      3 barry          17 11-Oct-2009 19:16:28 file:///b:/repos/trunk/test/file3.txt
+      3 barry          17 11-Oct-2009 19:16:28 file:///b:/repos/trunk/test/file4.txt
+      3 barry          17 11-Oct-2009 19:16:28 file:///b:/repos/trunk/test/file5.txt
+      3 barry           0 11-Oct-2009 19:16:28 file:///b:/repos/trunk/test/folder1
+      3 barry           0 11-Oct-2009 19:16:28 file:///b:/repos/trunk/test/folder3
+
+Info: PYSVN CMD ls b:\wc2\test
+b:/wc2/test/file1.txt
+b:/wc2/test/file1b.txt
+b:/wc2/test/file2.txt
+b:/wc2/test/file3.txt
+b:/wc2/test/file4.txt
+b:/wc2/test/file5.txt
+b:/wc2/test/folder1
+b:/wc2/test/folder3
+
+Info: PYSVN CMD ls -v b:\wc2\test
+      4 barry          25 11-Oct-2009 19:16:30 b:/wc2/test/file1.txt
+      7 barry          23 11-Oct-2009 19:16:38 b:/wc2/test/file1b.txt
+      3 barry          17 11-Oct-2009 19:16:28 b:/wc2/test/file2.txt
+      3 barry          17 11-Oct-2009 19:16:28 b:/wc2/test/file3.txt
+      3 barry          17 11-Oct-2009 19:16:28 b:/wc2/test/file4.txt
+      3 barry          17 11-Oct-2009 19:16:28 b:/wc2/test/file5.txt
+      3 barry           0 11-Oct-2009 19:16:28 b:/wc2/test/folder1
+      3 barry           0 11-Oct-2009 19:16:28 b:/wc2/test/folder3
+Info: Test - merge - see below
+Info: Test - mkdir - done above
+Info: Test - move
+Info: Create File msg.tmp - move url test      
+
+Info: PYSVN CMD move file:///b:/repos/trunk/test/file2.txt file:///b:/repos/trunk/test/file2b.txt
+Log message
+--- -------
+
+Info: PYSVN CMD move b:\wc2\test\file3.txt b:\wc2\test\file3b.txt
+A b:/wc2/test/file3b.txt
+D b:/wc2/test/file3.txt
+
+Info: PYSVN CMD checkin b:\wc2 -m "move wc test"
+A wc2/test/file3b.txt
+D wc2/test/file3.txt
+M wc2/test/file1b.txt
+Revision 9
+Info: Test - status
+Info: Append File b:\wc1\test\file4.txt - file 4 is changing     
+
+Info: PYSVN CMD checkin b:\wc1 -m "change wc1 for status -u to detect"
+M test/file4.txt
+Revision 10
+
+Info: PYSVN CMD status b:\wc2
+
+Info: PYSVN CMD status --verbose b:\wc2
+               4      4 barry          b:\wc2
+               4      4 barry          b:\wc2\test
+               4      4 barry          b:\wc2\test\file1.txt
+               9      9 barry          b:\wc2\test\file1b.txt
+               4      3 barry          b:\wc2\test\file2.txt
+               9      9 barry          b:\wc2\test\file3b.txt
+               4      3 barry          b:\wc2\test\file4.txt
+               4      3 barry          b:\wc2\test\file5.txt
+               4      3 barry          b:\wc2\test\folder1
+               4      3 barry          b:\wc2\test\folder1\file7.txt
+               4      3 barry          b:\wc2\test\folder1\folder2
+               4      3 barry          b:\wc2\test\folder1\folder2\file8.txt
+               4      3 barry          b:\wc2\test\folder3
+
+Info: PYSVN CMD status --show-updates b:\wc2
+       M  b:\wc2\test
+       D  b:\wc2\test\file2.txt
+       A  b:\wc2\test\file2b.txt
+       M  b:\wc2\test\file4.txt
+
+Info: PYSVN CMD status --show-updates --verbose b:\wc2
+               4      4 barry          b:\wc2
+       M       4      4 barry          b:\wc2\test
+               4      4 barry          b:\wc2\test\file1.txt
+               9      9 barry          b:\wc2\test\file1b.txt
+       D       4      3 barry          b:\wc2\test\file2.txt
+       A                               b:\wc2\test\file2b.txt
+               9      9 barry          b:\wc2\test\file3b.txt
+       M       4      3 barry          b:\wc2\test\file4.txt
+               4      3 barry          b:\wc2\test\file5.txt
+               4      3 barry          b:\wc2\test\folder1
+               4      3 barry          b:\wc2\test\folder1\file7.txt
+               4      3 barry          b:\wc2\test\folder1\folder2
+               4      3 barry          b:\wc2\test\folder1\folder2\file8.txt
+               4      3 barry          b:\wc2\test\folder3
+
+Info: PYSVN CMD update
+A file1b.txt
+A file2b.txt
+A file3b.txt
+D file2.txt
+D file3.txt
+Updated to revision 10
+
+Info: PYSVN CMD status --show-updates b:\wc2
+       M  b:\wc2\test
+       D  b:\wc2\test\file2.txt
+       A  b:\wc2\test\file2b.txt
+       M  b:\wc2\test\file4.txt
+
+Info: PYSVN CMD status --show-updates --verbose b:\wc2
+               4      4 barry          b:\wc2
+       M       4      4 barry          b:\wc2\test
+               4      4 barry          b:\wc2\test\file1.txt
+               9      9 barry          b:\wc2\test\file1b.txt
+       D       4      3 barry          b:\wc2\test\file2.txt
+       A                               b:\wc2\test\file2b.txt
+               9      9 barry          b:\wc2\test\file3b.txt
+       M       4      3 barry          b:\wc2\test\file4.txt
+               4      3 barry          b:\wc2\test\file5.txt
+               4      3 barry          b:\wc2\test\folder1
+               4      3 barry          b:\wc2\test\folder1\file7.txt
+               4      3 barry          b:\wc2\test\folder1\folder2
+               4      3 barry          b:\wc2\test\folder1\folder2\file8.txt
+               4      3 barry          b:\wc2\test\folder3
+
+Info: PYSVN CMD checkin b:\wc2 -m "prop change"
+Nothing to commit
+Info: Test - propdel
+
+Info: CMD cd /d b:\wc2\test
+
+Info: PYSVN CMD propset test:prop1 del_me file4.txt
+
+Info: PYSVN CMD proplist -v file4.txt
+Properties on 'file4.txt':
+  test:prop1: del_me
+
+Info: PYSVN CMD propdel test:prop1 file4.txt
+
+Info: PYSVN CMD proplist -v file4.txt
+Info: Test - propget
+
+Info: PYSVN CMD propget svn:eol-style file4.txt
+Info: Test - proplist - see above
+Info: Test - propset
+
+Info: CMD cd /d b:\wc2\test
+
+Info: PYSVN CMD proplist -v file4.txt
+
+Info: PYSVN CMD propset svn:eol-style native file4.txt
+
+Info: PYSVN CMD proplist -v file4.txt
+Properties on 'file4.txt':
+  svn:eol-style: native
+Info: Test - remove
+
+Info: CMD cd /d b:\wc2\test
+
+Info: PYSVN CMD remove file5.txt
+D file5.txt
+
+Info: PYSVN CMD status
+ M     file4.txt
+D      file5.txt
+Info: Test - resolved
+Info: Append File b:\wc1\test\file4.txt - conflict in file4 yes     
+Info: Append File b:\wc2\test\file4.txt - conflict in file4 no     
+
+Info: PYSVN CMD checkin b:\wc1\test -m "make a conflict part 1"
+M wc1/test/file4.txt
+Revision 11
+
+Info: PYSVN CMD update b:\wc2\test
+callback_conflict_resolver
+  action: <conflict_action.edit>
+  base_file: 'b:\\wc2\\test\\.svn\\text-base\\file4.txt.svn-base'
+  is_binary: False
+  kind: <conflict_kind.text>
+  merged_file: 'b:\\wc2\\test\\.svn\\tmp\\tempfile.3.tmp'
+  mime_type: None
+  my_file: 'b:\\wc2\\test\\.svn\\tmp\\tempfile.2.tmp'
+  node_kind: <node_kind.file>
+  path: 'b:/wc2/test/file4.txt'
+  property_name: None
+  reason: <conflict_reason.edited>
+  their_file: 'b:\\wc2\\test\\.svn\\tmp\\text-base\\file4.txt.svn-base'
+A b:/wc2/test/file2b.txt
+D b:/wc2/test/file2.txt
+U b:/wc2
+U b:/wc2/test
+U b:/wc2/test/file4.txt
+Updated to revision 11
+
+Info: PYSVN CMD status
+CM     file4.txt
+?      file4.txt.mine
+?      file4.txt.r11
+?      file4.txt.r4
+D      file5.txt
+
+Info: CMD copy b:\wc2\test\file4.txt.mine b:\wc2\test\file4.txt
+        1 file(s) copied.
+
+Info: PYSVN CMD resolved b:\wc2\test\file4.txt
+R b:/wc2/test/file4.txt
+
+Info: PYSVN CMD checkin b:\wc2\test\file4.txt -m "resolve a confict part 2"
+M file4.txt
+Revision 12
+Info: Test - revert
+
+Info: PYSVN CMD revert file5.txt
+R file5.txt
+
+Info: PYSVN CMD status
+Info: Test - revproplist
+
+Info: PYSVN CMD revproplist file:///b:/repos/trunk
+Revision: 12
+svn:author: barry
+svn:date: 2009-10-11T18:17:02.803375Z
+svn:log: resolve a confict part 2
+Info: Test - revpropget
+
+Info: PYSVN CMD revpropget svn:log file:///b:/repos/trunk
+Revision: 12
+svn:log: resolve a confict part 2
+
+Info: PYSVN CMD revpropget no_such_prop file:///b:/repos/trunk
+Revision: 12
+no_such_prop: None
+Info: Test - revpropset
+
+Info: PYSVN CMD revpropset svn:log "Hello world" file:///b:/repos/trunk
+Repository has not been enabled to accept revision propchanges;
+ask the administrator to create a pre-revprop-change hook
+Info: Test - revpropdel
+
+Info: PYSVN CMD revpropdel svn:log file:///b:/repos/trunk
+Repository has not been enabled to accept revision propchanges;
+ask the administrator to create a pre-revprop-change hook
+Info: Test - status - see above
+Info: Test - relocate
+
+Info: CMD mkdir b:\root
+
+Info: CMD move b:\repos b:\root
+
+Info: PYSVN CMD info b:\wc1
+Path: b:\wc1
+Name: .
+Url: file:///b:/repos/trunk
+Repository UUID: 2366d249-f026-ca4d-8d96-447fa5eb453f
+Revision: 2
+Node kind: directory
+Schedule: normal
+Last Changed Author: barry
+Last Changed Rev: 2
+Last Changed Date: 11-Oct-2009 19:16:22
+
+Info: PYSVN CMD relocate file:///b:/repos/trunk file:///b:/root/repos/trunk b:\wc1
+
+Info: PYSVN CMD info b:\wc1
+Path: b:\wc1
+Name: .
+Url: file:///b:/root/repos/trunk
+Repository UUID: 2366d249-f026-ca4d-8d96-447fa5eb453f
+Revision: 2
+Node kind: directory
+Schedule: normal
+Last Changed Author: barry
+Last Changed Rev: 2
+Last Changed Date: 11-Oct-2009 19:16:22
+
+Info: PYSVN CMD info b:\wc2
+Path: b:\wc2
+Name: .
+Url: file:///b:/repos/trunk
+Repository UUID: 2366d249-f026-ca4d-8d96-447fa5eb453f
+Revision: 4
+Node kind: directory
+Schedule: normal
+Last Changed Author: barry
+Last Changed Rev: 4
+Last Changed Date: 11-Oct-2009 19:16:30
+
+Info: PYSVN CMD relocate file:///b:/repos/trunk file:///b:/root/repos/trunk b:\wc2
+
+Info: PYSVN CMD info b:\wc2
+Path: b:\wc2
+Name: .
+Url: file:///b:/root/repos/trunk
+Repository UUID: 2366d249-f026-ca4d-8d96-447fa5eb453f
+Revision: 4
+Node kind: directory
+Schedule: normal
+Last Changed Author: barry
+Last Changed Rev: 4
+Last Changed Date: 11-Oct-2009 19:16:30
+Info: Test - switch
+
+Info: PYSVN CMD info b:\wc2
+Path: b:\wc2
+Name: .
+Url: file:///b:/root/repos/trunk
+Repository UUID: 2366d249-f026-ca4d-8d96-447fa5eb453f
+Revision: 4
+Node kind: directory
+Schedule: normal
+Last Changed Author: barry
+Last Changed Rev: 4
+Last Changed Date: 11-Oct-2009 19:16:30
+
+Info: PYSVN CMD switch b:\wc2 file:///b:/root/repos/tags/version1
+A b:/wc2/test/file2.txt
+A b:/wc2/test/file3.txt
+D b:/wc2/test/file1b.txt
+D b:/wc2/test/file2b.txt
+D b:/wc2/test/file3b.txt
+U b:/wc2
+U b:/wc2/test
+U b:/wc2/test/file4.txt
+
+Info: PYSVN CMD info b:\wc2
+Path: b:\wc2
+Name: .
+Url: file:///b:/root/repos/tags/version1
+Repository UUID: 2366d249-f026-ca4d-8d96-447fa5eb453f
+Revision: 12
+Node kind: directory
+Schedule: normal
+Last Changed Author: barry
+Last Changed Rev: 6
+Last Changed Date: 11-Oct-2009 19:16:35
+Info: Test - update - see above
+Info: Test - Info: Testing - merge
+
+Info: PYSVN CMD checkout file:///b:/root/repos/trunk b:\wc3
+A b:/wc3/test
+A b:/wc3/test/file1.txt
+A b:/wc3/test/file1b.txt
+A b:/wc3/test/file2b.txt
+A b:/wc3/test/file3b.txt
+A b:/wc3/test/file4.txt
+A b:/wc3/test/file5.txt
+A b:/wc3/test/folder1
+A b:/wc3/test/folder1/file7.txt
+A b:/wc3/test/folder1/folder2
+A b:/wc3/test/folder1/folder2/file8.txt
+A b:/wc3/test/folder3
+U b:/wc3
+Checked out revision 12
+
+Info: CMD cd b:\wc3\test
+Info: Create File file-merge-1.txt - test add file merge 1    
+Info: Create File file-merge-2.txt - test add file merge 2    
+
+Info: PYSVN CMD add file-merge-1.txt
+A file-merge-1.txt
+
+Info: PYSVN CMD add file-merge-2.txt
+A file-merge-2.txt
+
+Info: PYSVN CMD commit -m "add test merge files" .
+A test/file-merge-1.txt
+A test/file-merge-2.txt
+Revision 13
+Info: Create File msg.tmp - make a branch      
+
+Info: PYSVN CMD copy file:///b:/root/repos/trunk/test file:///b:/root/repos/trunk/test-branch
+Log message
+--- -------
+
+Info: PYSVN CMD update b:\wc3
+A b:/wc3/test-branch
+A b:/wc3/test-branch/file-merge-1.txt
+A b:/wc3/test-branch/file-merge-2.txt
+A b:/wc3/test-branch/file1.txt
+A b:/wc3/test-branch/file1b.txt
+A b:/wc3/test-branch/file2b.txt
+A b:/wc3/test-branch/file3b.txt
+A b:/wc3/test-branch/file4.txt
+A b:/wc3/test-branch/file5.txt
+A b:/wc3/test-branch/folder1
+A b:/wc3/test-branch/folder1/file7.txt
+A b:/wc3/test-branch/folder1/folder2
+A b:/wc3/test-branch/folder1/folder2/file8.txt
+A b:/wc3/test-branch/folder3
+U b:/wc3
+U b:/wc3/test
+Updated to revision 14
+Info: Create File file-merge-3.txt - test add file merge 3    
+
+Info: PYSVN CMD add file-merge-3.txt
+A file-merge-3.txt
+
+Info: PYSVN CMD rm file-merge-1.txt
+D file-merge-1.txt
+Info: Append File file-merge-2.txt - modify merge 2      
+
+Info: PYSVN CMD commit -m "change test merge files" .
+A test/file-merge-3.txt
+D test/file-merge-1.txt
+M test/file-merge-2.txt
+Revision 15
+
+Info: PYSVN CMD merge --dry-run --revision 14:15 file:///b:/root/repos/trunk/test b:\wc3\test-branch
+A b:/wc3/test-branch/file-merge-3.txt
+D b:/wc3/test-branch/file-merge-1.txt
+U b:/wc3/test-branch
+U b:/wc3/test-branch/file-merge-2.txt
+merge_begin b:/wc3/test-branch
+merge_begin b:/wc3/test-branch/file-merge-2.txt
+
+Info: PYSVN CMD merge --revision 14:15 file:///b:/root/repos/trunk/test b:\wc3\test-branch
+U b:/wc3/test-branch
+
+Info: PYSVN CMD status b:\wc3\test-branch
+ M     b:\wc3\test-branch
+D      b:\wc3\test-branch\file-merge-1.txt
+MM     b:\wc3\test-branch\file-merge-2.txt
+A  +   b:\wc3\test-branch\file-merge-3.txt
+ M     b:\wc3\test-branch\file1.txt
+ M     b:\wc3\test-branch\file1b.txt
+ M     b:\wc3\test-branch\file2b.txt
+ M     b:\wc3\test-branch\file3b.txt
+ M     b:\wc3\test-branch\file4.txt
+ M     b:\wc3\test-branch\file5.txt
+
+Info: PYSVN CMD diff b:\wc3\test-branch
+
+Property changes on: b:\wc3\test-branch
+___________________________________________________________________
+Added: svn:mergeinfo
+   Merged /trunk/test:r15*
+
+
+Property changes on: b:\wc3\test-branch\file1b.txt
+___________________________________________________________________
+Added: svn:mergeinfo
+   Merged /trunk/test/file1b.txt:r15
+
+
+Property changes on: b:\wc3\test-branch\file2b.txt
+___________________________________________________________________
+Added: svn:mergeinfo
+   Merged /trunk/test/file2b.txt:r15
+
+
+Property changes on: b:\wc3\test-branch\file4.txt
+___________________________________________________________________
+Added: svn:mergeinfo
+   Merged /trunk/test/file4.txt:r15
+
+
+Property changes on: b:\wc3\test-branch\file3b.txt
+___________________________________________________________________
+Added: svn:mergeinfo
+   Merged /trunk/test/file3b.txt:r15
+
+
+Property changes on: b:\wc3\test-branch\file5.txt
+___________________________________________________________________
+Added: svn:mergeinfo
+   Merged /trunk/test/file5.txt:r15
+
+Index: b:/wc3/test-branch/file-merge-1.txt
+===================================================================
+--- b:/wc3/test-branch/file-merge-1.txt	(revision 14)
++++ b:/wc3/test-branch/file-merge-1.txt	(working copy)
+@@ -1 +0,0 @@
+-test add file merge 1
+Index: b:/wc3/test-branch/file-merge-2.txt
+===================================================================
+--- b:/wc3/test-branch/file-merge-2.txt	(revision 14)
++++ b:/wc3/test-branch/file-merge-2.txt	(working copy)
+@@ -1 +1,2 @@
+ test add file merge 2
++modify merge 2
+
+Property changes on: b:\wc3\test-branch\file-merge-2.txt
+___________________________________________________________________
+Added: svn:mergeinfo
+   Merged /trunk/test/file-merge-2.txt:r15
+
+
+Property changes on: b:\wc3\test-branch\file-merge-3.txt
+___________________________________________________________________
+Added: svn:mergeinfo
+   Merged /trunk/test/file-merge-3.txt:r15
+
+
+Property changes on: b:\wc3\test-branch\file1.txt
+___________________________________________________________________
+Added: svn:mergeinfo
+   Merged /trunk/test/file1.txt:r15
+
+
+
+Info: CMD c:\python31\python.exe C:\wc\pysvn\trunk\pysvn\Extension\Tests\test_01_set_get_tests.py b:\configdir
+Info: Initial values
+Info: get_auth_cache() => 1
+Info: get_auto_props() => 0
+Info: get_default_password() => None
+Info: get_default_username() => None
+Info: get_interactive() => 1
+Info: get_store_passwords() => 1
+Info: Change values 1
+Info: Changed values 1
+Info: get_auth_cache() => 0
+Info: get_auto_props() => 0
+Info: get_default_password() => 'thepass'
+Info: get_default_username() => 'auser'
+Info: get_interactive() => 0
+Info: get_store_passwords() => 0
+Info: Change values 2
+Info: Changed values 2
+Info: get_auth_cache() => 1
+Info: get_auto_props() => 1
+Info: get_default_password() => None
+Info: get_default_username() => None
+Info: get_interactive() => 1
+Info: get_store_passwords() => 1
+Info: Test - end

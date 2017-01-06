@@ -1,0 +1,935 @@
+WorkDir: /Users/barry/wc/svn/pysvn-next/Extension
+PYTHON: /Library/Frameworks/Python.framework/Versions/2.7/Resources/Python.app/Contents/MacOS/Python
+Username: barry
+Info: CWD: /Users/barry/wc/svn/pysvn-next/Extension/Tests
+Info: Command: mkdir testroot-01
+Info: CWD: /Users/barry/wc/svn/pysvn-next/Extension/Tests
+Info: Command: cd testroot-01
+Info: CWD: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01
+Info: Command: mkdir tmp
+Info: PYSVN command /Library/Frameworks/Python.framework/Versions/2.7/Resources/Python.app/Contents/MacOS/Python /Users/barry/wc/svn/pysvn-next/Extension/Examples/Client/svn_cmd.py --pysvn-testing 01.01.00 --config-dir /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/configdir
+Info: CWD: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01
+Info: Command: svnadmin create /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/repos
+Info: Testing - mkdir
+Info: CWD: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01
+Info: pysvn command: mkdir file:///Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/repos/trunk -m test-01 add trunk
+commit_finalizing .
+Info: CWD: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01
+Info: pysvn command: mkdir file:///Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/repos/trunk/test -m test-01 add test
+commit_finalizing .
+Info: Testing - ls
+Info: CWD: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01
+Info: pysvn command: ls file:///Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/repos -v -R
+      2 barry           0 27-Apr-2016 13:49:29 file:///Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/repos/trunk
+      2 barry           0 27-Apr-2016 13:49:29 file:///Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/repos/trunk/test
+Info: Testing - checkout
+Info: CWD: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01
+Info: pysvn command: checkout file:///Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/repos/trunk /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc1
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc1/test
+U /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc1
+update_started /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc1
+Checked out revision 2
+Info: CWD: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01
+Info: Command: /Library/Frameworks/Python.framework/Versions/2.7/Resources/Python.app/Contents/MacOS/Python /Users/barry/wc/svn/pysvn-next/Extension/Tests/find.py /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc1
+Info: CWD: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01
+Info: Command: cd /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc1/test
+Info: Testing - add
+Info: CWD: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc1/test
+Info: pysvn command: add file1.txt
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc1/test/file1.txt
+Info: CWD: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc1/test
+Info: pysvn command: add file2.txt
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc1/test/file2.txt
+Info: CWD: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc1/test
+Info: pysvn command: add file3.txt
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc1/test/file3.txt
+Info: CWD: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc1/test
+Info: pysvn command: add file4.txt
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc1/test/file4.txt
+Info: CWD: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc1/test
+Info: pysvn command: add --force file5.txt
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc1/test/file5.txt
+Info: CWD: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc1/test
+Info: pysvn command: add file6.txt
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc1/test/file6.txt
+Info: CWD: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc1/test
+Info: pysvn command: add folder1
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc1/test/folder1
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc1/test/folder1/file7.txt
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc1/test/folder1/folder2
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc1/test/folder1/folder2/file8.txt
+Info: CWD: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc1/test
+Info: pysvn command: add --non-recursive folder3
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc1/test/folder3
+Info: CWD: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc1/test
+Info: pysvn command: checkin -m commit added files
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc1/test/file1.txt
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc1/test/file2.txt
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc1/test/file3.txt
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc1/test/file4.txt
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc1/test/file5.txt
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc1/test/file6.txt
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc1/test/folder1
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc1/test/folder1/file7.txt
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc1/test/folder1/folder2
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc1/test/folder1/folder2/file8.txt
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc1/test/folder3
+commit_finalizing .
+Revision 3
+Info: Setup to test access to deleted files
+Info: CWD: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc1/test
+Info: pysvn command: checkin -m commit mod file
+M /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc1/test/file6.txt
+commit_finalizing .
+Revision 4
+Info: CWD: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc1/test
+Info: pysvn command: rm file6.txt
+D /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc1/test/file6.txt
+Info: CWD: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc1/test
+Info: pysvn command: checkin -m commit delete file
+D /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc1/test/file6.txt
+commit_finalizing .
+Revision 5
+Info: Testing - update - get a new wc that will update
+Info: CWD: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc1/test
+Info: pysvn command: checkout file:///Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/repos/trunk /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test/file1.txt
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test/file2.txt
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test/file3.txt
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test/file4.txt
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test/file5.txt
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test/folder1
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test/folder1/file7.txt
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test/folder1/folder2
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test/folder1/folder2/file8.txt
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test/folder3
+U /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2
+update_started /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2
+Checked out revision 5
+Info: Testing - - checkin a mod from wc1
+Info: CWD: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc1/test
+Info: pysvn command: checkin -m commit modified file
+M /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc1/test/file1.txt
+commit_finalizing .
+Revision 6
+Info: Testing - update
+Info: CWD: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc1/test
+Info: pysvn command: update /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2
+U /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2
+U /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test
+U /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test/file1.txt
+update_started /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2
+Updated to revision 6
+Info: Testing - the rest in lexical order
+Info: Testing - annotate
+Info: CWD: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc1/test
+Info: pysvn command: annotate /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test/file1.txt
+A /trunk/test/file1.txt
+A /trunk/test/file1.txt
+1| r3 | barry | 2016-04-27T12:49:31.525642Z | test add file 1
+2| r6 | barry | 2016-04-27T12:49:37.922009Z | line 2
+Info: CWD: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc1/test
+Info: pysvn command: annotate -r 3:4 file:///Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/repos/trunk/test/file6.txt
+A /trunk/test/file6.txt
+A /trunk/test/file6.txt
+1| r3 | barry | 2016-04-27T12:49:31.525642Z | test add file 6
+2| r4 | barry | 2016-04-27T12:49:32.877234Z | test mod file 6
+Info: Testing - cat
+Info: CWD: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc1/test
+Info: pysvn command: cat -r head file:///Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/repos/trunk/test/file1.txt
+test add file 1
+line 2
+
+Info: CWD: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc1/test
+Info: pysvn command: cat -r 4 file:///Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/repos/trunk/test/file6.txt
+test add file 6
+test mod file 6
+
+Info: Testing - cleanup
+Info: CWD: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc1/test
+Info: pysvn command: cleanup /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc1
+Info: CWD: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc1/test
+Info: Command: cd /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc1
+Info: CWD: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc1
+Info: pysvn command: cleanup .
+Info: CWD: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc1
+Info: Command: cd /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc1/test
+Info: Testing - copy
+Info: CWD: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc1/test
+Info: pysvn command: mkdir file:///Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/repos/tags -m test-01 add tags
+commit_finalizing .
+Info: CWD: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc1/test
+Info: pysvn command: copy file:///Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/repos/trunk file:///Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/repos/tags/version1
+Log message
+--- -------
+commit_finalizing .
+Info: CWD: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc1/test
+Info: pysvn command: ls -v file:///Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/repos/tags
+      8 barry           0 27-Apr-2016 13:49:43 file:///Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/repos/tags/version1
+Info: CWD: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc1/test
+Info: pysvn command: copy /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test/file1.txt /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test/file1b.txt
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test/file1b.txt
+Info: CWD: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc1/test
+Info: pysvn command: propset svn:eol-style native /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test/file1b.txt
+property_added /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test/file1b.txt
+Info: CWD: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc1/test
+Info: pysvn command: checkin /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2 -m copy test
+commit_copied /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test/file1b.txt
+commit_finalizing .
+Revision 9
+Info: Testing - diff
+Info: CWD: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc1/test
+Info: pysvn command: diff /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2
+Index: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test/file1b.txt
+===================================================================
+--- /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test/file1b.txt	(revision 9)
++++ /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test/file1b.txt	(working copy)
+@@ -1,2 +1,3 @@
+ test add file 1
+ line 2
++new line
+
+Info: Testing - export
+Info: CWD: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc1/test
+Info: pysvn command: export file:///Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/repos/trunk/test /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/export1.native
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/export1.native
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/export1.native/file1.txt
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/export1.native/file1b.txt
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/export1.native/file2.txt
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/export1.native/file3.txt
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/export1.native/file4.txt
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/export1.native/file5.txt
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/export1.native/folder1
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/export1.native/folder1/file7.txt
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/export1.native/folder1/folder2
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/export1.native/folder1/folder2/file8.txt
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/export1.native/folder3
+Info: CWD: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc1/test
+Info: pysvn command: export --native-eol CR file:///Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/repos/trunk/test /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/export1.cr
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/export1.cr
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/export1.cr/file1.txt
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/export1.cr/file1b.txt
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/export1.cr/file2.txt
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/export1.cr/file3.txt
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/export1.cr/file4.txt
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/export1.cr/file5.txt
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/export1.cr/folder1
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/export1.cr/folder1/file7.txt
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/export1.cr/folder1/folder2
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/export1.cr/folder1/folder2/file8.txt
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/export1.cr/folder3
+Info: CWD: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc1/test
+Info: pysvn command: export --native-eol LF file:///Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/repos/trunk/test /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/export1.lf
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/export1.lf
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/export1.lf/file1.txt
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/export1.lf/file1b.txt
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/export1.lf/file2.txt
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/export1.lf/file3.txt
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/export1.lf/file4.txt
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/export1.lf/file5.txt
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/export1.lf/folder1
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/export1.lf/folder1/file7.txt
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/export1.lf/folder1/folder2
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/export1.lf/folder1/folder2/file8.txt
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/export1.lf/folder3
+Info: CWD: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc1/test
+Info: pysvn command: export --native-eol CRLF file:///Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/repos/trunk/test /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/export1.crlf
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/export1.crlf
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/export1.crlf/file1.txt
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/export1.crlf/file1b.txt
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/export1.crlf/file2.txt
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/export1.crlf/file3.txt
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/export1.crlf/file4.txt
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/export1.crlf/file5.txt
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/export1.crlf/folder1
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/export1.crlf/folder1/file7.txt
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/export1.crlf/folder1/folder2
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/export1.crlf/folder1/folder2/file8.txt
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/export1.crlf/folder3
+/Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/export1.native/file1.txt
+/Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/export1.native/file1b.txt
+/Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/export1.native/file2.txt
+/Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/export1.native/file3.txt
+/Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/export1.native/file4.txt
+/Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/export1.native/file5.txt
+/Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/export1.native/folder1/file7.txt
+/Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/export1.native/folder1/folder2/file8.txt
+/Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/export1.cr/file1.txt
+/Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/export1.cr/file1b.txt
+/Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/export1.cr/file2.txt
+/Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/export1.cr/file3.txt
+/Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/export1.cr/file4.txt
+/Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/export1.cr/file5.txt
+/Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/export1.cr/folder1/file7.txt
+/Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/export1.cr/folder1/folder2/file8.txt
+/Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/export1.lf/file1.txt
+/Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/export1.lf/file1b.txt
+/Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/export1.lf/file2.txt
+/Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/export1.lf/file3.txt
+/Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/export1.lf/file4.txt
+/Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/export1.lf/file5.txt
+/Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/export1.lf/folder1/file7.txt
+/Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/export1.lf/folder1/folder2/file8.txt
+/Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/export1.crlf/file1.txt
+/Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/export1.crlf/file1b.txt
+/Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/export1.crlf/file2.txt
+/Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/export1.crlf/file3.txt
+/Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/export1.crlf/file4.txt
+/Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/export1.crlf/file5.txt
+/Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/export1.crlf/folder1/file7.txt
+/Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/export1.crlf/folder1/folder2/file8.txt
+Info: Testing - info
+Info: CWD: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc1/test
+Info: pysvn command: info /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test
+Path: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test
+Name: .
+Url: file:///Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/repos/trunk/test
+Repository UUID: 2384123f-7a34-487e-8fe4-21c6e5dd03bc
+Revision: 6
+Node kind: directory
+Schedule: normal
+Last Changed Author: barry
+Last Changed Rev: 6
+Last Changed Date: 27-Apr-2016 13:49:37
+Info: CWD: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc1/test
+Info: pysvn command: info /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test/file1.txt
+Path: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test/file1.txt
+Name: file1.txt
+Url: file:///Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/repos/trunk/test/file1.txt
+Repository UUID: 2384123f-7a34-487e-8fe4-21c6e5dd03bc
+Revision: 6
+Node kind: file
+Schedule: normal
+Last Changed Author: barry
+Last Changed Rev: 6
+Last Changed Date: 27-Apr-2016 13:49:37
+Text Last Updated: 27-Apr-2016 13:49:39
+Checksum: d17a5219a23a23ce7f363b75e09ec043
+Info: Testing - log
+Info: CWD: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc1/test
+Info: pysvn command: log /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2
+------------------------------------------------------------
+rev 9: barry | 27-Apr-2016 13:49:46 | 1 lines
+copy test
+------------------------------------------------------------
+rev 6: barry | 27-Apr-2016 13:49:37 | 1 lines
+commit modified file
+------------------------------------------------------------
+rev 5: barry | 27-Apr-2016 13:49:34 | 1 lines
+commit delete file
+------------------------------------------------------------
+rev 4: barry | 27-Apr-2016 13:49:32 | 1 lines
+commit mod file
+------------------------------------------------------------
+rev 3: barry | 27-Apr-2016 13:49:31 | 1 lines
+commit added files
+------------------------------------------------------------
+rev 2: barry | 27-Apr-2016 13:49:29 | 1 lines
+test-01 add test
+------------------------------------------------------------
+rev 1: barry | 27-Apr-2016 13:49:28 | 1 lines
+test-01 add trunk
+------------------------------------------------------------
+Info: Testing - ls
+Info: CWD: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc1/test
+Info: pysvn command: ls file:///Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/repos/trunk/test
+file:///Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/repos/trunk/test/file1.txt
+file:///Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/repos/trunk/test/file1b.txt
+file:///Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/repos/trunk/test/file2.txt
+file:///Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/repos/trunk/test/file3.txt
+file:///Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/repos/trunk/test/file4.txt
+file:///Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/repos/trunk/test/file5.txt
+file:///Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/repos/trunk/test/folder1
+file:///Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/repos/trunk/test/folder3
+Info: CWD: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc1/test
+Info: pysvn command: ls -v file:///Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/repos/trunk/test
+      6 barry          23 27-Apr-2016 13:49:37 file:///Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/repos/trunk/test/file1.txt
+      9 barry          23 27-Apr-2016 13:49:46 file:///Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/repos/trunk/test/file1b.txt
+      3 barry          16 27-Apr-2016 13:49:31 file:///Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/repos/trunk/test/file2.txt
+      3 barry          16 27-Apr-2016 13:49:31 file:///Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/repos/trunk/test/file3.txt
+      3 barry          16 27-Apr-2016 13:49:31 file:///Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/repos/trunk/test/file4.txt
+      3 barry          16 27-Apr-2016 13:49:31 file:///Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/repos/trunk/test/file5.txt
+      3 barry           0 27-Apr-2016 13:49:31 file:///Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/repos/trunk/test/folder1
+      3 barry           0 27-Apr-2016 13:49:31 file:///Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/repos/trunk/test/folder3
+Info: CWD: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc1/test
+Info: pysvn command: ls /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test
+/Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test/file1.txt
+/Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test/file1b.txt
+/Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test/file2.txt
+/Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test/file3.txt
+/Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test/file4.txt
+/Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test/file5.txt
+/Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test/folder1
+/Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test/folder3
+Info: CWD: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc1/test
+Info: pysvn command: ls -v /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test
+      6 barry          23 27-Apr-2016 13:49:37 /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test/file1.txt
+      9 barry          23 27-Apr-2016 13:49:46 /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test/file1b.txt
+      3 barry          16 27-Apr-2016 13:49:31 /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test/file2.txt
+      3 barry          16 27-Apr-2016 13:49:31 /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test/file3.txt
+      3 barry          16 27-Apr-2016 13:49:31 /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test/file4.txt
+      3 barry          16 27-Apr-2016 13:49:31 /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test/file5.txt
+      3 barry           0 27-Apr-2016 13:49:31 /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test/folder1
+      3 barry           0 27-Apr-2016 13:49:31 /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test/folder3
+Info: Testing - merge - done below
+Info: Testing - mkdir - done above
+Info: Testing - move
+Info: CWD: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc1/test
+Info: pysvn command: move file:///Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/repos/trunk/test/file2.txt file:///Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/repos/trunk/test/file2b.txt
+Log message
+--- -------
+commit_finalizing .
+Info: CWD: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc1/test
+Info: pysvn command: move /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test/file3.txt /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test/file3b.txt
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test/file3b.txt
+D /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test/file3.txt
+Info: CWD: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc1/test
+Info: pysvn command: checkin /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2 -m move wc test
+D /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test/file3.txt
+M /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test/file1b.txt
+commit_copied /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test/file3b.txt
+commit_finalizing .
+Revision 11
+Info: Testing - status
+Info: CWD: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc1/test
+Info: pysvn command: checkin /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc1 -m change wc1 for status -u to detect
+M /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc1/test/file4.txt
+commit_finalizing .
+Revision 12
+Info: CWD: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc1/test
+Info: pysvn command: status /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2
+Info: CWD: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc1/test
+Info: pysvn command: status --verbose /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2
+               6      6 barry          /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2
+               6      6 barry          /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test
+               6      6 barry          /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test/file1.txt
+              11     11 barry          /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test/file1b.txt
+               6      3 barry          /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test/file2.txt
+              11     11 barry          /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test/file3b.txt
+               6      3 barry          /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test/file4.txt
+               6      3 barry          /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test/file5.txt
+               6      3 barry          /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test/folder1
+               6      3 barry          /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test/folder1/file7.txt
+               6      3 barry          /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test/folder1/folder2
+               6      3 barry          /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test/folder1/folder2/file8.txt
+               6      3 barry          /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test/folder3
+Info: CWD: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc1/test
+Info: pysvn command: status --show-updates /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2
+       M  /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test
+       D  /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test/file2.txt
+       A  /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test/file2b.txt
+       M  /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test/file4.txt
+Info: CWD: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc1/test
+Info: pysvn command: status --show-updates --verbose /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2
+               6      6 barry          /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2
+       M       6      6 barry          /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test
+               6      6 barry          /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test/file1.txt
+              11     11 barry          /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test/file1b.txt
+       D       6      3 barry          /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test/file2.txt
+       A                               /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test/file2b.txt
+              11     11 barry          /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test/file3b.txt
+       M       6      3 barry          /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test/file4.txt
+               6      3 barry          /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test/file5.txt
+               6      3 barry          /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test/folder1
+               6      3 barry          /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test/folder1/file7.txt
+               6      3 barry          /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test/folder1/folder2
+               6      3 barry          /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test/folder1/folder2/file8.txt
+               6      3 barry          /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test/folder3
+Info: CWD: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc1/test
+Info: pysvn command: update
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc1/test/file1b.txt
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc1/test/file2b.txt
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc1/test/file3b.txt
+D /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc1/test/file2.txt
+D /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc1/test/file3.txt
+U /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc1
+U /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc1/test
+update_started /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc1/test
+Updated to revision 12
+Info: CWD: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc1/test
+Info: pysvn command: status --show-updates /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2
+       M  /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test
+       D  /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test/file2.txt
+       A  /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test/file2b.txt
+       M  /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test/file4.txt
+Info: CWD: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc1/test
+Info: pysvn command: status --show-updates --verbose /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2
+               6      6 barry          /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2
+       M       6      6 barry          /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test
+               6      6 barry          /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test/file1.txt
+              11     11 barry          /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test/file1b.txt
+       D       6      3 barry          /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test/file2.txt
+       A                               /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test/file2b.txt
+              11     11 barry          /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test/file3b.txt
+       M       6      3 barry          /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test/file4.txt
+               6      3 barry          /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test/file5.txt
+               6      3 barry          /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test/folder1
+               6      3 barry          /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test/folder1/file7.txt
+               6      3 barry          /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test/folder1/folder2
+               6      3 barry          /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test/folder1/folder2/file8.txt
+               6      3 barry          /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test/folder3
+Info: CWD: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc1/test
+Info: pysvn command: checkin /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2 -m prop change
+Nothing to commit
+Info: Testing - propdel
+Info: CWD: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test
+Info: pysvn command: propset test:prop1 del_me file4.txt
+property_added /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test/file4.txt
+Info: CWD: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test
+Info: pysvn command: proplist -v file4.txt
+Properties on 'file4.txt':
+  test:prop1: del_me
+Info: CWD: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test
+Info: pysvn command: propdel test:prop1 file4.txt
+property_deleted /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test/file4.txt
+Info: CWD: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test
+Info: pysvn command: proplist -v file4.txt
+Info: Testing - propget
+Info: CWD: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test
+Info: pysvn command: propset svn:eol-style native file4.txt
+property_added /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test/file4.txt
+Info: CWD: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test
+Info: pysvn command: propget svn:eol-style file4.txt
+/Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test/file4.txt: native
+Info: CWD: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test
+Info: pysvn command: propget unknown file4.txt
+Info: Testing - proplist - see above
+Info: Testing - propset
+Info: CWD: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test
+Info: pysvn command: proplist -v file4.txt
+Properties on 'file4.txt':
+  svn:eol-style: native
+Info: CWD: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test
+Info: pysvn command: propset svn:eol-style native file4.txt
+property_modified /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test/file4.txt
+Info: CWD: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test
+Info: pysvn command: proplist -v file4.txt
+Properties on 'file4.txt':
+  svn:eol-style: native
+Info: Testing - remove
+Info: CWD: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test
+Info: pysvn command: remove file5.txt
+D /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test/file5.txt
+Info: CWD: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test
+Info: pysvn command: status
+ M     file4.txt
+D      file5.txt
+Info: Testing - resolved
+Info: CWD: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test
+Info: pysvn command: checkin /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc1/test -m make a conflict part 1
+M /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc1/test/file4.txt
+commit_finalizing .
+Revision 13
+Info: CWD: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test
+Info: pysvn command: update /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test
+callback_conflict_resolver
+  action: <conflict_action.edit>
+  base_file: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test/file4.txt.r6
+  is_binary: False
+  kind: <conflict_kind.text>
+  merged_file: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test/file4.txt
+  mime_type: None
+  my_file: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test/file4.txt.mine
+  node_kind: <node_kind.file>
+  operation: <wc_operation.none>
+  path: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test/file4.txt
+  property_name: None
+  reason: <conflict_reason.edited>
+  repos_url: {'node_kind': <node_kind.file>, 'path_in_repos': u'trunk/test/file4.txt', 'peg_rev': <Revision kind=number 6>, 'repos_url': u'file:///Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/repos'}
+  repos_url: {'node_kind': <node_kind.file>, 'path_in_repos': u'trunk/test/file4.txt', 'peg_rev': <Revision kind=number 13>, 'repos_url': u'file:///Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/repos'}
+  their_file: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test/file4.txt.r13
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test/file2b.txt
+D /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test/file2.txt
+U /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2
+U /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test
+U /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test/file4.txt
+conflict_resolver_done /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test/file4.txt
+conflict_resolver_starting /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test/file4.txt
+update_started /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test
+Updated to revision 13
+Info: CWD: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test
+Info: pysvn command: status
+CM     file4.txt
+?      file4.txt.mine
+?      file4.txt.r13
+?      file4.txt.r6
+D      file5.txt
+Info: CWD: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test
+Info: Command: cp /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test/file4.txt.mine /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test/file4.txt
+Info: CWD: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test
+Info: pysvn command: resolved /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test/file4.txt
+R /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test/file4.txt
+conflict_resolver_done /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test/file4.txt
+conflict_resolver_starting /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test/file4.txt
+Info: CWD: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test
+Info: pysvn command: checkin /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test/file4.txt -m resolve a confict part 2
+M /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test/file4.txt
+commit_finalizing .
+Revision 14
+Info: Testing - revert
+Info: CWD: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test
+Info: pysvn command: revert file5.txt
+R /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test/file5.txt
+Info: CWD: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test
+Info: pysvn command: status
+Info: Testing - revproplist
+Info: CWD: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test
+Info: pysvn command: revproplist file:///Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/repos/trunk
+Revision: 14
+svn:author: barry
+svn:date: 2016-04-27T12:50:01.899163Z
+svn:log: resolve a confict part 2
+Info: Testing - revpropget
+Info: CWD: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test
+Info: pysvn command: revpropget svn:log file:///Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/repos/trunk
+Revision: 14
+svn:log: resolve a confict part 2
+Info: CWD: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test
+Info: pysvn command: revpropget no_such_prop file:///Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/repos/trunk
+Revision: 14
+no_such_prop: None
+Info: Testing - revpropset
+Info: CWD: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test
+Info: pysvn command: revpropset svn:log Hello world file:///Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/repos/trunk
+Repository has not been enabled to accept revision propchanges;
+ask the administrator to create a pre-revprop-change hook
+Info: Testing - revpropdel
+Info: CWD: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test
+Info: pysvn command: revpropdel svn:log file:///Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/repos/trunk
+Repository has not been enabled to accept revision propchanges;
+ask the administrator to create a pre-revprop-change hook
+Info: Testing - status - see above
+Info: Testing - relocate
+Info: CWD: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test
+Info: Command: mkdir /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/root
+Info: CWD: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test
+Info: Command: mv /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/repos /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/root
+Info: CWD: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test
+Info: pysvn command: info /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc1
+Path: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc1
+Name: .
+Url: file:///Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/repos/trunk
+Repository UUID: 2384123f-7a34-487e-8fe4-21c6e5dd03bc
+Revision: 2
+Node kind: directory
+Schedule: normal
+Last Changed Author: barry
+Last Changed Rev: 2
+Last Changed Date: 27-Apr-2016 13:49:29
+Info: CWD: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test
+Info: pysvn command: relocate file:///Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/repos/trunk file:///Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/root/repos/trunk /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc1
+Info: CWD: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test
+Info: pysvn command: info /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc1
+Path: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc1
+Name: .
+Url: file:///Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/root/repos/trunk
+Repository UUID: 2384123f-7a34-487e-8fe4-21c6e5dd03bc
+Revision: 2
+Node kind: directory
+Schedule: normal
+Last Changed Author: barry
+Last Changed Rev: 2
+Last Changed Date: 27-Apr-2016 13:49:29
+Info: CWD: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test
+Info: pysvn command: info /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2
+Path: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2
+Name: .
+Url: file:///Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/repos/trunk
+Repository UUID: 2384123f-7a34-487e-8fe4-21c6e5dd03bc
+Revision: 6
+Node kind: directory
+Schedule: normal
+Last Changed Author: barry
+Last Changed Rev: 6
+Last Changed Date: 27-Apr-2016 13:49:37
+Info: CWD: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test
+Info: pysvn command: relocate file:///Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/repos/trunk file:///Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/root/repos/trunk /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2
+Info: CWD: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test
+Info: pysvn command: info /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2
+Path: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2
+Name: .
+Url: file:///Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/root/repos/trunk
+Repository UUID: 2384123f-7a34-487e-8fe4-21c6e5dd03bc
+Revision: 6
+Node kind: directory
+Schedule: normal
+Last Changed Author: barry
+Last Changed Rev: 6
+Last Changed Date: 27-Apr-2016 13:49:37
+Info: Testing - switch
+Info: CWD: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test
+Info: pysvn command: info /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2
+Path: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2
+Name: .
+Url: file:///Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/root/repos/trunk
+Repository UUID: 2384123f-7a34-487e-8fe4-21c6e5dd03bc
+Revision: 6
+Node kind: directory
+Schedule: normal
+Last Changed Author: barry
+Last Changed Rev: 6
+Last Changed Date: 27-Apr-2016 13:49:37
+Info: CWD: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test
+Info: pysvn command: switch /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2 file:///Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/root/repos/tags/version1
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test/file2.txt
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test/file3.txt
+D /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test/file1b.txt
+D /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test/file2b.txt
+D /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test/file3b.txt
+U /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2
+U /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test
+U /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test/file4.txt
+Info: CWD: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test
+Info: pysvn command: info /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2
+Path: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2
+Name: .
+Url: file:///Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/root/repos/tags/version1
+Repository UUID: 2384123f-7a34-487e-8fe4-21c6e5dd03bc
+Revision: 14
+Node kind: directory
+Schedule: normal
+Last Changed Author: barry
+Last Changed Rev: 8
+Last Changed Date: 27-Apr-2016 13:49:43
+Info: Testing - update - see above
+Info: Testing - merge
+Info: CWD: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test
+Info: pysvn command: checkout file:///Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/root/repos/trunk /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc3
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc3/test
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc3/test/file1.txt
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc3/test/file1b.txt
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc3/test/file2b.txt
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc3/test/file3b.txt
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc3/test/file4.txt
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc3/test/file5.txt
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc3/test/folder1
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc3/test/folder1/file7.txt
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc3/test/folder1/folder2
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc3/test/folder1/folder2/file8.txt
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc3/test/folder3
+U /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc3
+update_started /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc3
+Checked out revision 14
+Info: CWD: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc2/test
+Info: Command: cd /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc3/test
+Info: CWD: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc3/test
+Info: pysvn command: add file-merge-1.txt
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc3/test/file-merge-1.txt
+Info: CWD: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc3/test
+Info: pysvn command: add file-merge-2.txt
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc3/test/file-merge-2.txt
+Info: CWD: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc3/test
+Info: pysvn command: commit -m add test merge files .
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc3/test/file-merge-1.txt
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc3/test/file-merge-2.txt
+commit_finalizing .
+Revision 15
+Info: CWD: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc3/test
+Info: pysvn command: copy file:///Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/root/repos/trunk/test file:///Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/root/repos/trunk/test-branch
+Log message
+--- -------
+commit_finalizing .
+Info: CWD: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc3/test
+Info: pysvn command: update /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc3
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc3/test-branch
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc3/test-branch/file-merge-1.txt
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc3/test-branch/file-merge-2.txt
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc3/test-branch/file1.txt
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc3/test-branch/file1b.txt
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc3/test-branch/file2b.txt
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc3/test-branch/file3b.txt
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc3/test-branch/file4.txt
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc3/test-branch/file5.txt
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc3/test-branch/folder1
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc3/test-branch/folder1/file7.txt
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc3/test-branch/folder1/folder2
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc3/test-branch/folder1/folder2/file8.txt
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc3/test-branch/folder3
+U /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc3
+update_started /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc3
+Updated to revision 16
+Info: CWD: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc3/test
+Info: pysvn command: add file-merge-3.txt
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc3/test/file-merge-3.txt
+Info: CWD: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc3/test
+Info: pysvn command: rm file-merge-1.txt
+D /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc3/test/file-merge-1.txt
+Info: CWD: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc3/test
+Info: pysvn command: commit -m change test merge files .
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc3/test/file-merge-3.txt
+D /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc3/test/file-merge-1.txt
+M /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc3/test/file-merge-2.txt
+commit_finalizing .
+Revision 17
+Info: CWD: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc3/test
+Info: pysvn command: merge --dry-run --revision 16:17 file:///Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/root/repos/trunk/test /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc3/test-branch
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc3/test-branch/file-merge-3.txt
+D /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc3/test-branch/file-merge-1.txt
+U /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc3/test-branch/file-merge-2.txt
+U /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc3/test-branch/file-merge-2.txt
+merge_begin /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc3/test-branch
+merge_completed /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc3/test-branch
+merge_elide_info /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc3/test-branch/file-merge-2.txt
+merge_record_info /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc3/test-branch
+merge_record_info /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc3/test-branch/file-merge-2.txt
+merge_record_info_begin /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc3/test-branch
+merge_record_info_begin /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc3/test-branch/file-merge-2.txt
+Info: CWD: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc3/test
+Info: pysvn command: merge --revision 16:17 file:///Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/root/repos/trunk/test /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc3/test-branch
+merge_completed /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc3/test-branch
+Info: CWD: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc3/test
+Info: pysvn command: status /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc3/test-branch
+ M     /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc3/test-branch
+D      /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc3/test-branch/file-merge-1.txt
+M      /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc3/test-branch/file-merge-2.txt
+A  +   /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc3/test-branch/file-merge-3.txt
+Info: CWD: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc3/test
+Info: pysvn command: diff /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc3/test-branch
+Index: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc3/test-branch/file-merge-1.txt
+===================================================================
+--- /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc3/test-branch/file-merge-1.txt	(revision 16)
++++ /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc3/test-branch/file-merge-1.txt	(nonexistent)
+@@ -1 +0,0 @@
+-test add file merge 1
+Index: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc3/test-branch/file-merge-2.txt
+===================================================================
+--- /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc3/test-branch/file-merge-2.txt	(revision 16)
++++ /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc3/test-branch/file-merge-2.txt	(working copy)
+@@ -1 +1,2 @@
+ test add file merge 2
++modify merge 2
+Index: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc3/test-branch/file-merge-3.txt
+===================================================================
+Index: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc3/test-branch
+===================================================================
+--- /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc3/test-branch	(revision 16)
++++ /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc3/test-branch	(working copy)
+
+Property changes on: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc3/test-branch
+___________________________________________________________________
+Added: svn:mergeinfo
+## -0,0 +0,1 ##
+   Merged /trunk/test:r17
+
+Info: CWD: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc3/test
+Info: Command: /Library/Frameworks/Python.framework/Versions/2.7/Resources/Python.app/Contents/MacOS/Python /Users/barry/wc/svn/pysvn-next/Extension/Tests/test_01_set_get_tests.py /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/configdir
+Info: test_01_set_get_tests start
+Info: test_01_set_get_tests import pysvn
+Info: test_01_set_get_tests pysvn.Client( /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/configdir )
+Info: Initial values
+Info: get_auth_cache() => 1
+Info: get_auto_props() => 0
+Info: get_default_password() => None
+Info: get_default_username() => None
+Info: get_interactive() => 1
+Info: get_store_passwords() => 1
+Info: Change values 1
+Info: Changed values 1
+Info: get_auth_cache() => 0
+Info: get_auto_props() => 0
+Info: get_default_password() => 'thepass'
+Info: get_default_username() => 'auser'
+Info: get_interactive() => 0
+Info: get_store_passwords() => 0
+Info: Change values 2
+Info: Changed values 2
+Info: get_auth_cache() => 1
+Info: get_auto_props() => 1
+Info: get_default_password() => None
+Info: get_default_username() => None
+Info: get_interactive() => 1
+Info: get_store_passwords() => 1
+Info: test_01_set_get_tests dealloc Client()
+Info: test_01_set_get_tests done
+Info: Testing - import
+Info: CWD: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc3/test
+Info: pysvn command: mkdir file:///Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/root/repos/trunk/test/import -m test-01 add import
+commit_finalizing .
+Info: CWD: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc3/test
+Info: pysvn command: import --message no spaces /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/tmp/import1.txt file:///Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/root/repos/trunk/test/import/import-file1.txt
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/tmp/import1.txt
+commit_finalizing .
+Info: CWD: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc3/test
+Info: pysvn command: import --message space in url /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/tmp/import1.txt file:///Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/root/repos/trunk/test/import/import file1A.txt
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/tmp/import1.txt
+commit_finalizing .
+Info: CWD: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc3/test
+Info: pysvn command: import --message %20 in url /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/tmp/import1.txt file:///Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/root/repos/trunk/test/import/import%20file1B.txt
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/tmp/import1.txt
+commit_finalizing .
+Info: CWD: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc3/test
+Info: pysvn command: import --message space in file, none in url /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/tmp/import 2.txt file:///Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/root/repos/trunk/test/import/import-file2.txt
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/tmp/import 2.txt
+commit_finalizing .
+Info: CWD: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc3/test
+Info: pysvn command: import --message space in file, space in url /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/tmp/import 2.txt file:///Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/root/repos/trunk/test/import/import file2A.txt
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/tmp/import 2.txt
+commit_finalizing .
+Info: CWD: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc3/test
+Info: pysvn command: import --message space in file, %20 in url /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/tmp/import 2.txt file:///Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/root/repos/trunk/test/import/import%20file2B.txt
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/tmp/import 2.txt
+commit_finalizing .
+Info: CWD: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc3/test
+Info: pysvn command: update /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc1
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc1/test-branch
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc1/test-branch/file-merge-1.txt
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc1/test-branch/file-merge-2.txt
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc1/test-branch/file1.txt
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc1/test-branch/file1b.txt
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc1/test-branch/file2b.txt
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc1/test-branch/file3b.txt
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc1/test-branch/file4.txt
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc1/test-branch/file5.txt
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc1/test-branch/folder1
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc1/test-branch/folder1/file7.txt
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc1/test-branch/folder1/folder2
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc1/test-branch/folder1/folder2/file8.txt
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc1/test-branch/folder3
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc1/test/file-merge-2.txt
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc1/test/file-merge-3.txt
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc1/test/import
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc1/test/import/import file1A.txt
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc1/test/import/import file1B.txt
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc1/test/import/import file2A.txt
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc1/test/import/import file2B.txt
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc1/test/import/import-file1.txt
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc1/test/import/import-file2.txt
+U /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc1
+U /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc1/test
+U /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc1/test/file4.txt
+update_started /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc1
+Updated to revision 24
+Info: CWD: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc3/test
+Info: pysvn command: log --limit 6 --verbose /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-01/wc1
+------------------------------------------------------------
+rev 24: barry | 27-Apr-2016 13:50:21 | 1 lines
+Changed paths:
+  A /trunk/test/import/import file2B.txt
+space in file, %20 in url
+------------------------------------------------------------
+rev 23: barry | 27-Apr-2016 13:50:19 | 1 lines
+Changed paths:
+  A /trunk/test/import/import file2A.txt
+space in file, space in url
+------------------------------------------------------------
+rev 22: barry | 27-Apr-2016 13:50:18 | 1 lines
+Changed paths:
+  A /trunk/test/import/import-file2.txt
+space in file, none in url
+------------------------------------------------------------
+rev 21: barry | 27-Apr-2016 13:50:17 | 1 lines
+Changed paths:
+  A /trunk/test/import/import file1B.txt
+%20 in url
+------------------------------------------------------------
+rev 20: barry | 27-Apr-2016 13:50:16 | 1 lines
+Changed paths:
+  A /trunk/test/import/import file1A.txt
+space in url
+------------------------------------------------------------
+rev 19: barry | 27-Apr-2016 13:50:15 | 1 lines
+Changed paths:
+  A /trunk/test/import/import-file1.txt
+no spaces
+------------------------------------------------------------

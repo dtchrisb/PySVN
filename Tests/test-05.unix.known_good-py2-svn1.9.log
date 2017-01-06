@@ -1,0 +1,264 @@
+WorkDir: /home/barry/wc/svn/pysvn-trunk/Extension
+PYTHON: /usr/bin/python2.7
+Username: barry
+Info: CWD: /home/barry/wc/svn/pysvn-trunk/Extension/Tests
+Info: Command: mkdir testroot-05
+Info: CWD: /home/barry/wc/svn/pysvn-trunk/Extension/Tests
+Info: Command: cd testroot-05
+Info: CWD: /home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05
+Info: Command: mkdir tmp
+Info: PYSVN command /usr/bin/python2.7 /home/barry/wc/svn/pysvn-trunk/Extension/Examples/Client/svn_cmd.py --pysvn-testing 01.02.01 --config-dir /home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05/configdir
+Info: CWD: /home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05
+Info: Command: svnadmin create /home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05/repos
+Info: Setup - mkdir
+Info: CWD: /home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05
+Info: pysvn command: mkdir file:///home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05/repos/trunk -m test-05 add trunk
+commit_finalizing .
+Info: CWD: /home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05
+Info: pysvn command: mkdir file:///home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05/repos/trunk/test -m test-05 add test
+commit_finalizing .
+Info: Setup - checkout wc1
+Info: CWD: /home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05
+Info: pysvn command: checkout file:///home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05/repos/trunk /home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05/wc1
+A /home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05/wc1/test
+U /home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05/wc1
+update_started /home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05/wc1
+Checked out revision 2
+Info: CWD: /home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05
+Info: Command: cd /home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05/wc1/test
+Info: Setup - add files
+Info: CWD: /home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05/wc1/test
+Info: pysvn command: add file1.txt
+A /home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05/wc1/test/file1.txt
+Info: CWD: /home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05/wc1/test
+Info: pysvn command: add file2.txt
+A /home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05/wc1/test/file2.txt
+Info: CWD: /home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05/wc1/test
+Info: pysvn command: checkin -m commit added files
+A /home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05/wc1/test/file1.txt
+A /home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05/wc1/test/file2.txt
+commit_finalizing .
+Revision 3
+Info: Setup - checkout wc2
+Info: CWD: /home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05/wc1/test
+Info: pysvn command: checkout file:///home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05/repos/trunk /home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05/wc2
+A /home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05/wc2/test
+A /home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05/wc2/test/file1.txt
+A /home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05/wc2/test/file2.txt
+U /home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05/wc2
+update_started /home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05/wc2
+Checked out revision 3
+Info: Test - status of unlocked files
+Info: CWD: /home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05/wc1/test
+Info: pysvn command: status --verbose /home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05/wc1
+               2      2 barry          /home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05/wc1
+               2      2 barry          /home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05/wc1/test
+               3      3 barry          /home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05/wc1/test/file1.txt
+               3      3 barry          /home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05/wc1/test/file2.txt
+Info: Test - info2 of unlocked files
+Info: CWD: /home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05/wc1/test
+Info: pysvn command: info2 /home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05/wc1/test/file1.txt
+
+Path: /home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05/wc1/test/file1.txt
+Url: file:///home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05/repos/trunk/test/file1.txt
+Revision: 3
+Repository UUID: 22da79e6-4f0c-4396-b8c9-880eca47ae3d
+Last changed author: barry
+Last Changed Date: 19-Apr-2016 19:50:30
+Last changed revision: 3
+Node kind: file
+Schedule: normal
+Text Last Updated: 19-Apr-2016 19:50:30
+Checksum: ae0e5a70bbd1dcadbb4ac8ffe321bdb7b7682b72
+Info: Test - list of unlocked files
+Info: CWD: /home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05/wc1/test
+Info: pysvn command: list --verbose --fetch-locks /home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05/wc1/test/file1.txt
+      3 barry          16 19-Apr-2016 19:50:30 /home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05/wc1/test/file1.txt
+Info: CWD: /home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05/wc1/test
+Info: pysvn command: list --verbose --fetch-locks /home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05/wc1/test
+      3 barry          -1 19-Apr-2016 19:50:30 /home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05/wc1/test
+      3 barry          16 19-Apr-2016 19:50:30 /home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05/wc1/test/file1.txt
+      3 barry          16 19-Apr-2016 19:50:30 /home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05/wc1/test/file2.txt
+Info: Test - lock unlocked file
+Info: CWD: /home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05/wc1/test
+Info: pysvn command: lock /home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05/wc1/test/file1.txt -m lock comment test 05
+locked /home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05/wc1/test/file1.txt
+Info: Test - status of locked files
+Info: CWD: /home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05/wc1/test
+Info: pysvn command: status --verbose /home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05/wc1
+               2      2 barry          /home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05/wc1
+               2      2 barry          /home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05/wc1/test
+     K         3      3 barry          /home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05/wc1/test/file1.txt
+               3      3 barry          /home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05/wc1/test/file2.txt
+Info: Test - info2 of locked files
+Info: CWD: /home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05/wc1/test
+Info: pysvn command: info2 /home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05/wc1/test/file1.txt
+
+Path: /home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05/wc1/test/file1.txt
+Url: file:///home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05/repos/trunk/test/file1.txt
+Revision: 3
+Repository UUID: 22da79e6-4f0c-4396-b8c9-880eca47ae3d
+Last changed author: barry
+Last Changed Date: 19-Apr-2016 19:50:30
+Last changed revision: 3
+Node kind: file
+Lock Owner: barry
+Lock Creation Date: 19-Apr-2016 19:50:30
+Lock Token: opaquelocktoken:3ce31d7e-d72b-4a1c-bed4-8eeea627c09d
+Lock Comment:
+lock comment test 05
+Schedule: normal
+Text Last Updated: 19-Apr-2016 19:50:30
+Checksum: ae0e5a70bbd1dcadbb4ac8ffe321bdb7b7682b72
+Info: Test - list of locked files
+Info: CWD: /home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05/wc1/test
+Info: pysvn command: list --verbose --fetch-locks /home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05/wc1/test/file1.txt
+      3 barry          16 19-Apr-2016 19:50:30 /home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05/wc1/test/file1.txt
+        Lock   owner: barry
+        Lock comment: lock comment test 05
+        Lock created: 2016-04-19 19:50:30
+Info: CWD: /home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05/wc1/test
+Info: pysvn command: list --verbose --fetch-locks /home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05/wc1/test
+      3 barry          -1 19-Apr-2016 19:50:30 /home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05/wc1/test
+      3 barry          16 19-Apr-2016 19:50:30 /home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05/wc1/test/file1.txt
+        Lock   owner: barry
+        Lock comment: lock comment test 05
+        Lock created: 2016-04-19 19:50:30
+      3 barry          16 19-Apr-2016 19:50:30 /home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05/wc1/test/file2.txt
+Info: Test - attempt to checkin over a locked file
+Info: CWD: /home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05/wc1/test
+Info: Command: cd /home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05/wc2/test
+Info: CWD: /home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05/wc2/test
+Info: pysvn command: commit -m change when file locked in other wc .
+M /home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05/wc2/test/file1.txt
+M /home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05/wc2/test/file2.txt
+failed_locked /home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05/wc2/test/file1.txt
+Commit failed (details follow):
+File '/home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05/wc2/test/file1.txt' is locked in another working copy
+Cannot verify lock on path '/trunk/test/file1.txt'; no matching lock-token available
+Info: Test - lock locked file
+Info: CWD: /home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05/wc2/test
+Info: pysvn command: lock /home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05/wc2/test/file1.txt
+failed_lock /home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05/wc2/test/file1.txt
+Info: Test - lock --force locked file
+Info: CWD: /home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05/wc2/test
+Info: pysvn command: lock --force /home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05/wc2/test/file1.txt -m Stealing lock
+locked /home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05/wc2/test/file1.txt
+Info: Test - info2 of locked files
+Info: CWD: /home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05/wc2/test
+Info: pysvn command: info2 /home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05/wc2/test/file1.txt
+
+Path: /home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05/wc2/test/file1.txt
+Url: file:///home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05/repos/trunk/test/file1.txt
+Revision: 3
+Repository UUID: 22da79e6-4f0c-4396-b8c9-880eca47ae3d
+Last changed author: barry
+Last Changed Date: 19-Apr-2016 19:50:30
+Last changed revision: 3
+Node kind: file
+Lock Owner: barry
+Lock Creation Date: 19-Apr-2016 19:50:31
+Lock Token: opaquelocktoken:ff4ade6e-40db-4496-b1c3-6a2436e09f93
+Lock Comment:
+Stealing lock
+Schedule: normal
+Text Last Updated: 19-Apr-2016 19:50:30
+Checksum: ae0e5a70bbd1dcadbb4ac8ffe321bdb7b7682b72
+Info: Test - status of locked files
+Info: CWD: /home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05/wc2/test
+Info: pysvn command: status --verbose /home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05/wc2
+               3      3 barry          /home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05/wc2
+               3      3 barry          /home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05/wc2/test
+M    K         3      3 barry          /home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05/wc2/test/file1.txt
+M              3      3 barry          /home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05/wc2/test/file2.txt
+Info: Test - commit with lock
+Info: CWD: /home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05/wc2/test
+Info: pysvn command: commit -m change when file locked in this wc .
+M /home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05/wc2/test/file1.txt
+M /home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05/wc2/test/file2.txt
+commit_finalizing .
+Revision 4
+Info: Test - status of locked files
+Info: CWD: /home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05/wc2/test
+Info: pysvn command: status --verbose /home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05/wc2
+               3      3 barry          /home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05/wc2
+               3      3 barry          /home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05/wc2/test
+     K         4      4 barry          /home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05/wc2/test/file1.txt
+               4      4 barry          /home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05/wc2/test/file2.txt
+Info: Test - list of locked files
+Info: CWD: /home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05/wc2/test
+Info: pysvn command: list --verbose --fetch-locks --recursive /home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05/wc2
+      4 barry          -1 19-Apr-2016 19:50:31 /home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05/wc2
+      4 barry           0 19-Apr-2016 19:50:31 /home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05/wc2/test
+      4 barry          33 19-Apr-2016 19:50:31 /home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05/wc2/test/file1.txt
+        Lock   owner: barry
+        Lock comment: Stealing lock
+        Lock created: 2016-04-19 19:50:31
+      4 barry          33 19-Apr-2016 19:50:31 /home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05/wc2/test/file2.txt
+Info: Test - unlock locked file
+Info: CWD: /home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05/wc2/test
+Info: pysvn command: unlock /home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05/wc2/test/file1.txt
+unlocked /home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05/wc2/test/file1.txt
+Info: Test - status of unlocked files
+Info: CWD: /home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05/wc2/test
+Info: pysvn command: status --verbose /home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05/wc2
+               3      3 barry          /home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05/wc2
+               3      3 barry          /home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05/wc2/test
+               4      4 barry          /home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05/wc2/test/file1.txt
+               4      4 barry          /home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05/wc2/test/file2.txt
+Info: Test - list of unlocked files
+Info: CWD: /home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05/wc2/test
+Info: pysvn command: list --verbose --fetch-locks --recursive /home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05/wc2
+      4 barry          -1 19-Apr-2016 19:50:31 /home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05/wc2
+      4 barry           0 19-Apr-2016 19:50:31 /home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05/wc2/test
+      4 barry          33 19-Apr-2016 19:50:31 /home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05/wc2/test/file1.txt
+      4 barry          33 19-Apr-2016 19:50:31 /home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05/wc2/test/file2.txt
+Info: Test - status of locked files
+Info: CWD: /home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05/wc2/test
+Info: pysvn command: status --verbose /home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05/wc1
+               2      2 barry          /home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05/wc1
+               2      2 barry          /home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05/wc1/test
+     K         3      3 barry          /home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05/wc1/test/file1.txt
+               3      3 barry          /home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05/wc1/test/file2.txt
+Info: Test - list of unlocked files
+Info: CWD: /home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05/wc2/test
+Info: pysvn command: list --verbose --fetch-locks --recursive /home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05/wc1
+      4 barry          -1 19-Apr-2016 19:50:31 /home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05/wc1
+      4 barry           0 19-Apr-2016 19:50:31 /home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05/wc1/test
+      4 barry          33 19-Apr-2016 19:50:31 /home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05/wc1/test/file1.txt
+      4 barry          33 19-Apr-2016 19:50:31 /home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05/wc1/test/file2.txt
+Info: Test - update with stolen lock
+Info: CWD: /home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05/wc2/test
+Info: pysvn command: update /home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05/wc1/test
+U /home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05/wc1
+U /home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05/wc1/test
+U /home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05/wc1/test/file1.txt
+U /home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05/wc1/test/file2.txt
+update_started /home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05/wc1/test
+Updated to revision 4
+Info: Test - status of locked files
+Info: CWD: /home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05/wc2/test
+Info: pysvn command: status --verbose /home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05/wc1
+               2      2 barry          /home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05/wc1
+               4      4 barry          /home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05/wc1/test
+               4      4 barry          /home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05/wc1/test/file1.txt
+               4      4 barry          /home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05/wc1/test/file2.txt
+Info: Test - info2 of URL
+Info: CWD: /home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05/wc2/test
+Info: pysvn command: info2 --revision HEAD file:///home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05/repos/trunk/test/file1.txt
+
+Path: file1.txt
+Url: file:///home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05/repos/trunk/test/file1.txt
+Revision: 4
+Repository UUID: 22da79e6-4f0c-4396-b8c9-880eca47ae3d
+Last changed author: barry
+Last Changed Date: 19-Apr-2016 19:50:31
+Last changed revision: 4
+Node kind: file
+Info: Test - list of locked files
+Info: CWD: /home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05/wc2/test
+Info: pysvn command: list --verbose --fetch-locks --recursive /home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05/wc1
+      4 barry          -1 19-Apr-2016 19:50:31 /home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05/wc1
+      4 barry           0 19-Apr-2016 19:50:31 /home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05/wc1/test
+      4 barry          33 19-Apr-2016 19:50:31 /home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05/wc1/test/file1.txt
+      4 barry          33 19-Apr-2016 19:50:31 /home/barry/wc/svn/pysvn-trunk/Extension/Tests/testroot-05/wc1/test/file2.txt

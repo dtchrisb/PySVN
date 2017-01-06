@@ -1,0 +1,21 @@
+WorkDir: /Users/barry/wc/svn/pysvn/Extension
+PYTHON: /usr/bin/python2.3
+Info: Client created
+Info: Expecting error callback_get_login required
+Info: passed
+Info: Expecting error unhandled exception in callback_get_login
+Traceback (most recent call last):
+  File "../test_callbacks.py", line 79, in get_login_bad
+    return retcode, username, password, save
+NameError: global name 'retcode' is not defined
+Info: passed
+Info: Expecting error callback_get_log_message required
+Info: passed
+Info: Expecting error unhandled exception in callback_get_log_message
+Traceback (most recent call last):
+  File "../test_callbacks.py", line 86, in get_log_message_bad
+    return bad_var
+NameError: global name 'bad_var' is not defined
+Info: passed
+Info: Expecting error None
+Info: Passed 4

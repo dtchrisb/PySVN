@@ -1,0 +1,36 @@
+WorkDir: C:\BuildRoot\Win32-MSVC90-1.6.5\pysvn\py31
+PYTHON: c:\python31\python.exe
+Username: barry
+
+C:\BuildRoot\Win32-MSVC90-1.6.5\pysvn\py31\Tests >setlocal
+
+C:\BuildRoot\Win32-MSVC90-1.6.5\pysvn\py31\Tests >mkdir testroot-03 
+
+C:\BuildRoot\Win32-MSVC90-1.6.5\pysvn\py31\Tests >subst b: C:\BuildRoot\Win32-MSVC90-1.6.5\pysvn\py31\Tests\testroot-03 
+
+C:\BuildRoot\Win32-MSVC90-1.6.5\pysvn\py31\Tests >mkdir b:\configdir 
+
+C:\BuildRoot\Win32-MSVC90-1.6.5\pysvn\py31\Tests >cd testroot-03 
+
+C:\BuildRoot\Win32-MSVC90-1.6.5\pysvn\py31\Tests\testroot-03 >c:\python31\python.exe ..\test_callbacks.py 
+Traceback (most recent call last):
+  File "..\test_callbacks.py", line 79, in get_login_bad
+    return retcode, username, password, save
+NameError: global name 'retcode' is not defined
+Traceback (most recent call last):
+  File "..\test_callbacks.py", line 86, in get_log_message_bad
+    return bad_var
+NameError: global name 'bad_var' is not defined
+Info: Client created
+Info: Expecting error callback_get_login required
+Info: passed
+Info: Expecting error unhandled exception in callback_get_login
+Info: passed
+Info: Expecting error callback_get_log_message required
+Info: passed
+Info: Expecting error unhandled exception in callback_get_log_message
+Info: passed
+Info: Expecting error None
+Info: Passed 4
+
+C:\BuildRoot\Win32-MSVC90-1.6.5\pysvn\py31\Tests\testroot-03 >endlocal

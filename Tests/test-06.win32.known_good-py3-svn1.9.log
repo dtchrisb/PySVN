@@ -1,0 +1,88 @@
+WorkDir: C:\Users\barry\wc\svn\PySVN\Extension
+PYTHON: c:\python35.Win64\python.exe
+Username: barry
+Info: PYSVN CMD c:\python35.Win64\python.exe C:\Users\barry\wc\svn\PySVN\Extension\Examples\Client\svn_cmd.py --pysvn-testing 01.03.00 --config-dir b:\configdir
+
+Info: CMD mkdir testroot-06
+
+Info: CMD subst b: C:\Users\barry\wc\svn\PySVN\Extension\Tests\testroot-06
+
+Info: CMD cd /d b:\
+
+Info: CMD svnadmin create b:/repos
+Info: Setup - mkdir
+
+Info: PYSVN CMD mkdir file:///b:/repos/trunk -m "test-06 add trunk"
+commit_finalizing .
+
+Info: PYSVN CMD mkdir file:///b:/repos/trunk/test -m "test-06 add test"
+commit_finalizing .
+Info: Setup - checkout wc1
+
+Info: PYSVN CMD checkout file:///b:/repos/trunk b:\wc1
+A B:/wc1/test
+U B:/wc1
+update_started B:/wc1
+Checked out revision 2
+
+Info: CMD cd b:\wc1\test
+Info: Setup - add files
+Info: Create File file1.txt - test add file 1     
+Info: Create File file2.txt - test add file 2     
+
+Info: PYSVN CMD add file1.txt
+A B:/wc1/test/file1.txt
+
+Info: PYSVN CMD add file2.txt
+A B:/wc1/test/file2.txt
+
+Info: PYSVN CMD checkin -m "commit added files"
+A B:/wc1/test/file1.txt
+A B:/wc1/test/file2.txt
+commit_finalizing .
+Revision 3
+Info: Test - info of path
+
+Info: PYSVN CMD info file1.txt
+Path: file1.txt
+Name: file1.txt
+Url: file:///B:/repos/trunk/test/file1.txt
+Repository: file:///B:/repos
+Repository UUID: bb61a85c-026b-c047-a48e-48865e54b172
+Revision: 3
+Node kind: file
+Schedule: normal
+Last Changed Author: barry
+Last Changed Rev: 3
+Last Changed Date: 27-Apr-2016 20:43:05
+Text Last Updated: 27-Apr-2016 20:43:05
+Checksum: 1e41522fd7b6b6325667c8554893a6db
+Info: Test - info2 of path
+
+Info: PYSVN CMD info2 file1.txt
+
+Path: B:/wc1/test/file1.txt
+Url: file:///B:/repos/trunk/test/file1.txt
+Revision: 3
+Repository root_URL: file:///B:/repos
+Repository UUID: bb61a85c-026b-c047-a48e-48865e54b172
+Last changed author: barry
+Last Changed Date: 27-Apr-2016 20:43:05
+Last changed revision: 3
+Node kind: file
+Schedule: normal
+Text Last Updated: 27-Apr-2016 20:43:05
+Checksum: d88eba14019658765c3dc2a2b46c4d0f1ee50e5f
+Info: Test - info2 of URL
+
+Info: PYSVN CMD info2 --revision HEAD file:///b:/repos/trunk/test/file1.txt
+
+Path: file1.txt
+Url: file:///B:/repos/trunk/test/file1.txt
+Revision: 3
+Repository root_URL: file:///B:/repos
+Repository UUID: bb61a85c-026b-c047-a48e-48865e54b172
+Last changed author: barry
+Last Changed Date: 27-Apr-2016 20:43:05
+Last changed revision: 3
+Node kind: file

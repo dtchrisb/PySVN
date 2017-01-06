@@ -1,0 +1,75 @@
+WorkDir: C:\Users\barry\wc\svn\PySVN\Extension
+PYTHON: c:\python27.Win64\python.exe
+Username: barry
+Info: PYSVN CMD c:\python27.Win64\python.exe C:\Users\barry\wc\svn\PySVN\Extension\Examples\Client\svn_cmd.py --pysvn-testing 01.09.00 --config-dir b:\configdir
+
+Info: CMD mkdir testroot-10
+
+Info: CMD subst b: C:\Users\barry\wc\svn\PySVN\Extension\Tests\testroot-10
+
+Info: CMD cd /d b:\
+
+Info: CMD mkdir tmp
+
+Info: CMD svnadmin create b:\repos
+Info: Setup - mkdir
+ 
+Info: PYSVN CMD mkdir file:///b:/repos/trunk -m "test-10 add trunk" 
+commit_finalizing .
+Info: Setup - checkout wc1
+ 
+Info: PYSVN CMD checkout file:///b:/repos/trunk b:\wc1 
+update_started B:/wc1
+Checked out revision 1
+
+Info: CMD cd /d b:\wc1
+Info: Setup - add files and folders
+ 
+Info: PYSVN CMD mkdir folder1 
+A B:/wc1/folder1
+ 
+Info: PYSVN CMD propset svn:ignore "*~" folder1 
+property_added B:/wc1/folder1
+Info: Create File folder1\file-a.txt - test add file 1     
+ 
+Info: PYSVN CMD add folder1\file-a.txt 
+A B:/wc1/folder1/file-a.txt
+Info: Create File folder1/file-a.txt~ - test add file 1     
+Info: Create File folder1/file-b.txt - test add file 1     
+Info: vacuum no removes
+ 
+Info: PYSVN CMD status2 --verbose --no-ignore . 
+               1      1 barry          B:\wc1
+ M            -1     -1 None           B:\wc1\folder1
+M             -1     -1 None           B:\wc1\folder1\file-a.txt
+?                                      B:\wc1\folder1\file-a.txt~
+?                                      B:\wc1\folder1\file-b.txt
+ 
+Info: PYSVN CMD vacuum 
+Info: vacuum remove ignored
+ 
+Info: PYSVN CMD status2 --verbose --no-ignore . 
+               1      1 barry          B:\wc1
+ M            -1     -1 None           B:\wc1\folder1
+M             -1     -1 None           B:\wc1\folder1\file-a.txt
+?                                      B:\wc1\folder1\file-a.txt~
+?                                      B:\wc1\folder1\file-b.txt
+ 
+Info: PYSVN CMD vacuum --remove-ignored-items 
+D B:/wc1/folder1/file-a.txt~
+Info: vacuum remove versioned
+ 
+Info: PYSVN CMD status2 --verbose --no-ignore . 
+               1      1 barry          B:\wc1
+ M            -1     -1 None           B:\wc1\folder1
+M             -1     -1 None           B:\wc1\folder1\file-a.txt
+?                                      B:\wc1\folder1\file-b.txt
+ 
+Info: PYSVN CMD vacuum --remove-unversioned-items 
+D B:/wc1/folder1/file-b.txt
+Info: check final state
+ 
+Info: PYSVN CMD status2 --verbose --no-ignore . 
+               1      1 barry          B:\wc1
+ M            -1     -1 None           B:\wc1\folder1
+M             -1     -1 None           B:\wc1\folder1\file-a.txt

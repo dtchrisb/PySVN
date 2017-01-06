@@ -1,0 +1,92 @@
+WorkDir: /Users/barry/wc/svn/pysvn/Extension
+PYTHON: /Library/Frameworks/Python.framework/Versions/2.7/Resources/Python.app/Contents/MacOS/Python
+Username: barry
+Info: CWD: /Users/barry/wc/svn/pysvn/Extension/Tests
+Info: Command: mkdir testroot-08
+Info: CWD: /Users/barry/wc/svn/pysvn/Extension/Tests
+Info: Command: cd testroot-08
+Info: CWD: /Users/barry/wc/svn/pysvn/Extension/Tests/testroot-08
+Info: Command: mkdir tmp
+Info: PYSVN command /Library/Frameworks/Python.framework/Versions/2.7/Resources/Python.app/Contents/MacOS/Python /Users/barry/wc/svn/pysvn/Extension/Examples/Client/svn_cmd.py --pysvn-testing 01.05.00 --config-dir /Users/barry/wc/svn/pysvn/Extension/Tests/testroot-08/configdir
+Info: CWD: /Users/barry/wc/svn/pysvn/Extension/Tests/testroot-08
+Info: Command: svnadmin create /Users/barry/wc/svn/pysvn/Extension/Tests/testroot-08/repos
+Info: Setup - mkdir
+Info: CWD: /Users/barry/wc/svn/pysvn/Extension/Tests/testroot-08
+Info: pysvn command: mkdir file:///Users/barry/wc/svn/pysvn/Extension/Tests/testroot-08/repos/trunk -m test-08 add trunk
+Info: Setup - checkout wc1
+Info: CWD: /Users/barry/wc/svn/pysvn/Extension/Tests/testroot-08
+Info: pysvn command: checkout file:///Users/barry/wc/svn/pysvn/Extension/Tests/testroot-08/repos/trunk /Users/barry/wc/svn/pysvn/Extension/Tests/testroot-08/wc1
+update_started /Users/barry/wc/svn/pysvn/Extension/Tests/testroot-08/wc1
+Checked out revision 1
+Info: CWD: /Users/barry/wc/svn/pysvn/Extension/Tests/testroot-08
+Info: Command: cd /Users/barry/wc/svn/pysvn/Extension/Tests/testroot-08/wc1
+Info: Setup - add files and folders
+Info: CWD: /Users/barry/wc/svn/pysvn/Extension/Tests/testroot-08/wc1
+Info: pysvn command: mkdir folder1
+A /Users/barry/wc/svn/pysvn/Extension/Tests/testroot-08/wc1/folder1
+Info: CWD: /Users/barry/wc/svn/pysvn/Extension/Tests/testroot-08/wc1
+Info: pysvn command: mkdir folder2
+A /Users/barry/wc/svn/pysvn/Extension/Tests/testroot-08/wc1/folder2
+Info: CWD: /Users/barry/wc/svn/pysvn/Extension/Tests/testroot-08/wc1
+Info: pysvn command: mkdir folder2/sub2
+A /Users/barry/wc/svn/pysvn/Extension/Tests/testroot-08/wc1/folder2/sub2
+Info: CWD: /Users/barry/wc/svn/pysvn/Extension/Tests/testroot-08/wc1
+Info: pysvn command: add folder1/file-a.txt
+A /Users/barry/wc/svn/pysvn/Extension/Tests/testroot-08/wc1/folder1/file-a.txt
+Info: CWD: /Users/barry/wc/svn/pysvn/Extension/Tests/testroot-08/wc1
+Info: pysvn command: add folder2/file-b.txt
+A /Users/barry/wc/svn/pysvn/Extension/Tests/testroot-08/wc1/folder2/file-b.txt
+Info: CWD: /Users/barry/wc/svn/pysvn/Extension/Tests/testroot-08/wc1
+Info: pysvn command: add folder2/sub2/file-b.txt
+A /Users/barry/wc/svn/pysvn/Extension/Tests/testroot-08/wc1/folder2/sub2/file-b.txt
+Info: CWD: /Users/barry/wc/svn/pysvn/Extension/Tests/testroot-08/wc1
+Info: pysvn command: checkin -m commit added files
+A /Users/barry/wc/svn/pysvn/Extension/Tests/testroot-08/wc1/folder1
+A /Users/barry/wc/svn/pysvn/Extension/Tests/testroot-08/wc1/folder1/file-a.txt
+A /Users/barry/wc/svn/pysvn/Extension/Tests/testroot-08/wc1/folder2
+A /Users/barry/wc/svn/pysvn/Extension/Tests/testroot-08/wc1/folder2/file-b.txt
+A /Users/barry/wc/svn/pysvn/Extension/Tests/testroot-08/wc1/folder2/sub2
+A /Users/barry/wc/svn/pysvn/Extension/Tests/testroot-08/wc1/folder2/sub2/file-b.txt
+Revision 2
+Info: CWD: /Users/barry/wc/svn/pysvn/Extension/Tests/testroot-08/wc1
+Info: Command: cat /Users/barry/wc/svn/pysvn/Extension/Tests/testroot-08/diff-1.patch
+Info: CWD: /Users/barry/wc/svn/pysvn/Extension/Tests/testroot-08/wc1
+Info: pysvn command: diff folder1/file-a.txt
+Index: folder1/file-a.txt
+===================================================================
+--- folder1/file-a.txt	(revision 2)
++++ folder1/file-a.txt	(working copy)
+@@ -1 +1,2 @@
+ test add file 1
++test add line 2
+
+Info: CWD: /Users/barry/wc/svn/pysvn/Extension/Tests/testroot-08/wc1
+Info: Command: cat folder1/file-a.txt
+test add file 1
+test add line 2
+Info: CWD: /Users/barry/wc/svn/pysvn/Extension/Tests/testroot-08/wc1
+Info: pysvn command: checkout file:///Users/barry/wc/svn/pysvn/Extension/Tests/testroot-08/repos/trunk /Users/barry/wc/svn/pysvn/Extension/Tests/testroot-08/wc2
+A /Users/barry/wc/svn/pysvn/Extension/Tests/testroot-08/wc2/folder1
+A /Users/barry/wc/svn/pysvn/Extension/Tests/testroot-08/wc2/folder1/file-a.txt
+A /Users/barry/wc/svn/pysvn/Extension/Tests/testroot-08/wc2/folder2
+A /Users/barry/wc/svn/pysvn/Extension/Tests/testroot-08/wc2/folder2/file-b.txt
+A /Users/barry/wc/svn/pysvn/Extension/Tests/testroot-08/wc2/folder2/sub2
+A /Users/barry/wc/svn/pysvn/Extension/Tests/testroot-08/wc2/folder2/sub2/file-b.txt
+U /Users/barry/wc/svn/pysvn/Extension/Tests/testroot-08/wc2
+update_started /Users/barry/wc/svn/pysvn/Extension/Tests/testroot-08/wc2
+Checked out revision 2
+Info: CWD: /Users/barry/wc/svn/pysvn/Extension/Tests/testroot-08/wc1
+Info: Command: cd /Users/barry/wc/svn/pysvn/Extension/Tests/testroot-08/wc2
+Info: CWD: /Users/barry/wc/svn/pysvn/Extension/Tests/testroot-08/wc2
+Info: Command: cat folder1/file-a.txt
+test add file 1
+Info: CWD: /Users/barry/wc/svn/pysvn/Extension/Tests/testroot-08/wc2
+Info: pysvn command: patch /Users/barry/wc/svn/pysvn/Extension/Tests/testroot-08/diff-1.patch /Users/barry/wc/svn/pysvn/Extension/Tests/testroot-08/wc2 --no-remove-tempfiles
+patch /Users/barry/wc/svn/pysvn/Extension/Tests/testroot-08/wc2/folder1/file-a.txt
+patch_applied_hunk /Users/barry/wc/svn/pysvn/Extension/Tests/testroot-08/wc2/folder1/file-a.txt
+Info: CWD: /Users/barry/wc/svn/pysvn/Extension/Tests/testroot-08/wc2
+Info: Command: cat folder1/file-a.txt
+test add file 1
+test add line 2
+Info: CWD: /Users/barry/wc/svn/pysvn/Extension/Tests/testroot-08/wc2
+Info: Command: diff -u /Users/barry/wc/svn/pysvn/Extension/Tests/testroot-08/wc1/folder1/file-a.txt /Users/barry/wc/svn/pysvn/Extension/Tests/testroot-08/wc2/folder1/file-a.txt

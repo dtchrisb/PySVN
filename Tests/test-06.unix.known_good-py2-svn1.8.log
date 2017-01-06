@@ -1,0 +1,87 @@
+WorkDir: /Users/barry/wc/svn/pysvn/Extension
+PYTHON: /Library/Frameworks/Python.framework/Versions/2.7/Resources/Python.app/Contents/MacOS/Python
+Username: barry
+Info: CWD: /Users/barry/wc/svn/pysvn/Extension/Tests
+Info: Command: mkdir testroot-06
+Info: CWD: /Users/barry/wc/svn/pysvn/Extension/Tests
+Info: Command: cd testroot-06
+Info: CWD: /Users/barry/wc/svn/pysvn/Extension/Tests/testroot-06
+Info: Command: mkdir tmp
+Info: PYSVN command /Library/Frameworks/Python.framework/Versions/2.7/Resources/Python.app/Contents/MacOS/Python /Users/barry/wc/svn/pysvn/Extension/Examples/Client/svn_cmd.py --pysvn-testing 01.03.00 --config-dir /Users/barry/wc/svn/pysvn/Extension/Tests/testroot-06/configdir
+Info: CWD: /Users/barry/wc/svn/pysvn/Extension/Tests/testroot-06
+Info: Command: svnadmin create /Users/barry/wc/svn/pysvn/Extension/Tests/testroot-06/repos
+Info: Setup - mkdir
+Info: CWD: /Users/barry/wc/svn/pysvn/Extension/Tests/testroot-06
+Info: pysvn command: mkdir file:///Users/barry/wc/svn/pysvn/Extension/Tests/testroot-06/repos/trunk -m test-06 add trunk
+Info: CWD: /Users/barry/wc/svn/pysvn/Extension/Tests/testroot-06
+Info: pysvn command: mkdir file:///Users/barry/wc/svn/pysvn/Extension/Tests/testroot-06/repos/trunk/test -m test-06 add test
+Info: Setup - checkout wc1
+Info: CWD: /Users/barry/wc/svn/pysvn/Extension/Tests/testroot-06
+Info: pysvn command: checkout file:///Users/barry/wc/svn/pysvn/Extension/Tests/testroot-06/repos/trunk /Users/barry/wc/svn/pysvn/Extension/Tests/testroot-06/wc1
+A /Users/barry/wc/svn/pysvn/Extension/Tests/testroot-06/wc1/test
+U /Users/barry/wc/svn/pysvn/Extension/Tests/testroot-06/wc1
+update_started /Users/barry/wc/svn/pysvn/Extension/Tests/testroot-06/wc1
+Checked out revision 2
+Info: CWD: /Users/barry/wc/svn/pysvn/Extension/Tests/testroot-06
+Info: Command: cd /Users/barry/wc/svn/pysvn/Extension/Tests/testroot-06/wc1/test
+Info: Setup - add files
+Info: CWD: /Users/barry/wc/svn/pysvn/Extension/Tests/testroot-06/wc1/test
+Info: pysvn command: add file1.txt
+A /Users/barry/wc/svn/pysvn/Extension/Tests/testroot-06/wc1/test/file1.txt
+Info: CWD: /Users/barry/wc/svn/pysvn/Extension/Tests/testroot-06/wc1/test
+Info: pysvn command: add file2.txt
+A /Users/barry/wc/svn/pysvn/Extension/Tests/testroot-06/wc1/test/file2.txt
+Info: CWD: /Users/barry/wc/svn/pysvn/Extension/Tests/testroot-06/wc1/test
+Info: pysvn command: checkin -m commit added files
+A /Users/barry/wc/svn/pysvn/Extension/Tests/testroot-06/wc1/test/file1.txt
+A /Users/barry/wc/svn/pysvn/Extension/Tests/testroot-06/wc1/test/file2.txt
+Revision 3
+Info: Test - info of path
+Info: CWD: /Users/barry/wc/svn/pysvn/Extension/Tests/testroot-06/wc1/test
+Info: pysvn command: info file1.txt
+Path: file1.txt
+Name: file1.txt
+Url: file:///Users/barry/wc/svn/pysvn/Extension/Tests/testroot-06/repos/trunk/test/file1.txt
+Repository: file:///Users/barry/wc/svn/pysvn/Extension/Tests/testroot-06/repos
+Repository UUID: d230889c-a17f-4475-ad79-37afdc2dad7f
+Revision: 3
+Node kind: file
+Schedule: normal
+Last Changed Author: barry
+Last Changed Rev: 3
+Last Changed Date: 19-Apr-2016 12:13:12
+Text Last Updated: 19-Apr-2016 12:13:12
+Checksum: e99afc2363b20ca1e52cd9ce4e8577eb
+Info: Test - info2 of path
+Info: CWD: /Users/barry/wc/svn/pysvn/Extension/Tests/testroot-06/wc1/test
+Info: pysvn command: info2 file1.txt
+
+Path: /Users/barry/wc/svn/pysvn/Extension/Tests/testroot-06/wc1/test/file1.txt
+Url: file:///Users/barry/wc/svn/pysvn/Extension/Tests/testroot-06/repos/trunk/test/file1.txt
+Revision: 3
+Repository root_URL: file:///Users/barry/wc/svn/pysvn/Extension/Tests/testroot-06/repos
+Repository UUID: d230889c-a17f-4475-ad79-37afdc2dad7f
+Last changed author: barry
+Last Changed Date: 19-Apr-2016 12:13:12
+Last changed revision: 3
+Node kind: file
+Schedule: normal
+Text Last Updated: 19-Apr-2016 12:13:12
+Checksum: ae0e5a70bbd1dcadbb4ac8ffe321bdb7b7682b72
+Info: Test - info2 of URL
+Info: CWD: /Users/barry/wc/svn/pysvn/Extension/Tests/testroot-06/wc1/test
+Info: pysvn command: info --revision HEAD file:///Users/barry/wc/svn/pysvn/Extension/Tests/testroot-06/repos/trunk/test/file1.txt
+unused option --revision
+Info: Test - info2 of URL
+Info: CWD: /Users/barry/wc/svn/pysvn/Extension/Tests/testroot-06/wc1/test
+Info: pysvn command: info2 --revision HEAD file:///Users/barry/wc/svn/pysvn/Extension/Tests/testroot-06/repos/trunk/test/file1.txt
+
+Path: file1.txt
+Url: file:///Users/barry/wc/svn/pysvn/Extension/Tests/testroot-06/repos/trunk/test/file1.txt
+Revision: 3
+Repository root_URL: file:///Users/barry/wc/svn/pysvn/Extension/Tests/testroot-06/repos
+Repository UUID: d230889c-a17f-4475-ad79-37afdc2dad7f
+Last changed author: barry
+Last Changed Date: 19-Apr-2016 12:13:12
+Last changed revision: 3
+Node kind: file

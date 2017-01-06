@@ -1,0 +1,297 @@
+WorkDir: C:\wc\svn\pysvn\Extension
+PYTHON: c:\python27.win32\python.exe
+Username: barry
+
+C:\wc\svn\pysvn\Extension\Tests > setlocal
+
+C:\wc\svn\pysvn\Extension\Tests > set PYTHONPATH=C:\wc\svn\pysvn\Extension\Source;C:\wc\svn\pysvn\Extension\Examples\Client 
+
+C:\wc\svn\pysvn\Extension\Tests > set PYSVN=c:\python27.win32\python.exe C:\wc\svn\pysvn\Extension\Examples\Client\svn_cmd.py --pysvn-testing 01.02.01 --config-dir b:\configdir 
+
+C:\wc\svn\pysvn\Extension\Tests > mkdir testroot-04 
+
+C:\wc\svn\pysvn\Extension\Tests > subst b: C:\wc\svn\pysvn\Extension\Tests\testroot-04 
+
+C:\wc\svn\pysvn\Extension\Tests > cd /d B:\ 
+
+B:\ > svnadmin create b:\repos 
+
+B:\ > rem mkdir 
+
+B:\ > c:\python27.win32\python.exe C:\wc\svn\pysvn\Extension\Examples\Client\svn_cmd.py --pysvn-testing 01.02.01 --config-dir b:\configdir mkdir file:///b:/repos/trunk -m "test-01 add trunk" 
+
+B:\ > c:\python27.win32\python.exe C:\wc\svn\pysvn\Extension\Examples\Client\svn_cmd.py --pysvn-testing 01.02.01 --config-dir b:\configdir mkdir file:///b:/repos/trunk/test -m "test-01 add test" 
+
+B:\ > rem Install hooks 
+
+B:\ > echo echo c:\python27.win32\python.exe C:\wc\svn\pysvn\Extension\Tests\test_04_commit_hook_test_1.py pre-commit %* >b:\pre_test_1.output  1>>b:\repos\hooks\pre-commit.cmd 
+
+B:\ > echo set PYTHONPATH=C:\wc\svn\pysvn\Extension\Source;C:\wc\svn\pysvn\Extension\Examples\Client  1>>b:\repos\hooks\pre-commit.cmd 
+
+B:\ > echo c:\python27.win32\python.exe C:\wc\svn\pysvn\Extension\Tests\test_04_commit_hook_test_1.py pre-commit %* >>b:\pre_test_1.output  1>>b:\repos\hooks\pre-commit.cmd 
+
+B:\ > echo echo c:\python27.win32\python.exe C:\wc\svn\pysvn\Extension\Tests\test_04_commit_hook_test_1.py post-commit %* is_revision >b:\post_test_1.output  1>>b:\repos\hooks\post-commit.cmd 
+
+B:\ > echo set PYTHONPATH=C:\wc\svn\pysvn\Extension\Source;C:\wc\svn\pysvn\Extension\Examples\Client  1>>b:\repos\hooks\post-commit.cmd 
+
+B:\ > echo c:\python27.win32\python.exe C:\wc\svn\pysvn\Extension\Tests\test_04_commit_hook_test_1.py post-commit %* is_revision >>b:\post_test_1.output  1>>b:\repos\hooks\post-commit.cmd 
+
+B:\ > rem Add one dir 
+
+B:\ > c:\python27.win32\python.exe C:\wc\svn\pysvn\Extension\Examples\Client\svn_cmd.py --pysvn-testing 01.02.01 --config-dir b:\configdir mkdir file:///b:/repos/trunk/test/a -m "pre-commit test 1" 
+
+B:\ > rem pre_test_1.output start ---------------------------------------- 
+
+B:\ > type b:\pre_test_1.output 
+c:\python27.win32\python.exe C:\wc\svn\pysvn\Extension\Tests\test_04_commit_hook_test_1.py pre-commit B:\repos 2-2  
+Info: pre-commit test 1
+Info: Transaction( B:\repos, 2-2) ...
+Info: revproplist() ...
+svn:author: barry
+svn:check-locks: true
+svn:date: 2013-07-01T19:43:13.731229Z
+svn:log: pre-commit test 1
+Info: changed() ...
+trunk/test/a: action='A', kind=<node_kind.dir>, text_mod=0, prop_mod=0
+Info: changed( copy_info=True ) ...
+trunk/test/a: action='A', kind=<node_kind.dir>, text_mod=0, prop_mod=0 copyfrom_rev=0 copyfrom_path=None
+Info: list() ...
+/trunk: kind=<node_kind.dir>
+/trunk/test: kind=<node_kind.dir>
+/trunk/test/a: kind=<node_kind.dir>
+
+B:\ > rem  pre_test_1.output end ------------------------------------------ 
+
+B:\ > rem post_test_1.output start ---------------------------------------- 
+
+B:\ > type b:\post_test_1.output 
+c:\python27.win32\python.exe C:\wc\svn\pysvn\Extension\Tests\test_04_commit_hook_test_1.py post-commit B:\repos 3 is_revision  
+Info: post-commit test 1
+Info: Transaction( B:\repos, 3, is_revision=True) ...
+Info: revproplist() ...
+svn:author: barry
+svn:date: 2013-07-01T19:43:13.824780Z
+svn:log: pre-commit test 1
+Info: changed() ...
+trunk/test/a: action='A', kind=<node_kind.dir>, text_mod=0, prop_mod=0
+Info: changed( copy_info=True ) ...
+trunk/test/a: action='A', kind=<node_kind.dir>, text_mod=0, prop_mod=0 copyfrom_rev=0 copyfrom_path=None
+Info: list() ...
+/trunk: kind=<node_kind.dir>
+/trunk/test: kind=<node_kind.dir>
+/trunk/test/a: kind=<node_kind.dir>
+
+B:\ > rem  post_test_1.output end ------------------------------------------ 
+
+B:\ > rem Add two files 
+
+B:\ > c:\python27.win32\python.exe C:\wc\svn\pysvn\Extension\Examples\Client\svn_cmd.py --pysvn-testing 01.02.01 --config-dir b:\configdir co file:///b:/repos/trunk/test b:\wc 
+A B:/wc/a
+U B:/wc
+update_started B:/wc
+Checked out revision 3
+
+B:\ > echo file1 ROOT  1>b:\wc\file1.txt 
+
+B:\ > echo file1 A  1>b:\wc\a\file1.txt 
+
+B:\ > c:\python27.win32\python.exe C:\wc\svn\pysvn\Extension\Examples\Client\svn_cmd.py --pysvn-testing 01.02.01 --config-dir b:\configdir add b:\wc\file1.txt 
+A B:/wc/file1.txt
+
+B:\ > c:\python27.win32\python.exe C:\wc\svn\pysvn\Extension\Examples\Client\svn_cmd.py --pysvn-testing 01.02.01 --config-dir b:\configdir add b:\wc\a\file1.txt 
+A B:/wc/a/file1.txt
+
+B:\ > c:\python27.win32\python.exe C:\wc\svn\pysvn\Extension\Examples\Client\svn_cmd.py --pysvn-testing 01.02.01 --config-dir b:\configdir checkin -m "Add two files" b:\wc 
+A B:/wc/a/file1.txt
+A B:/wc/file1.txt
+Revision 4
+
+B:\ > rem pre_test_1.output start ---------------------------------------- 
+
+B:\ > type b:\pre_test_1.output 
+c:\python27.win32\python.exe C:\wc\svn\pysvn\Extension\Tests\test_04_commit_hook_test_1.py pre-commit B:\repos 3-3  
+Info: pre-commit test 1
+Info: Transaction( B:\repos, 3-3) ...
+Info: revproplist() ...
+svn:author: barry
+svn:check-locks: true
+svn:date: 2013-07-01T19:43:14.245757Z
+svn:log: Add two files
+Info: changed() ...
+trunk/test/a/file1.txt: action='A', kind=<node_kind.file>, text_mod=1, prop_mod=0
+     contents: 'file1 A \r\n'
+trunk/test/file1.txt: action='A', kind=<node_kind.file>, text_mod=1, prop_mod=0
+     contents: 'file1 ROOT \r\n'
+Info: changed( copy_info=True ) ...
+trunk/test/a/file1.txt: action='A', kind=<node_kind.file>, text_mod=1, prop_mod=0 copyfrom_rev=0 copyfrom_path=None
+     contents: 'file1 A \r\n'
+trunk/test/file1.txt: action='A', kind=<node_kind.file>, text_mod=1, prop_mod=0 copyfrom_rev=0 copyfrom_path=None
+     contents: 'file1 ROOT \r\n'
+Info: list() ...
+/trunk: kind=<node_kind.dir>
+/trunk/test: kind=<node_kind.dir>
+/trunk/test/a: kind=<node_kind.dir>
+/trunk/test/a/file1.txt: kind=<node_kind.file>
+/trunk/test/file1.txt: kind=<node_kind.file>
+
+B:\ > rem  pre_test_1.output end ------------------------------------------ 
+
+B:\ > rem post_test_1.output start ---------------------------------------- 
+
+B:\ > type b:\post_test_1.output 
+c:\python27.win32\python.exe C:\wc\svn\pysvn\Extension\Tests\test_04_commit_hook_test_1.py post-commit B:\repos 4 is_revision  
+Info: post-commit test 1
+Info: Transaction( B:\repos, 4, is_revision=True) ...
+Info: revproplist() ...
+svn:author: barry
+svn:date: 2013-07-01T19:43:14.370491Z
+svn:log: Add two files
+Info: changed() ...
+trunk/test/a/file1.txt: action='A', kind=<node_kind.file>, text_mod=1, prop_mod=0
+     contents: 'file1 A \r\n'
+trunk/test/file1.txt: action='A', kind=<node_kind.file>, text_mod=1, prop_mod=0
+     contents: 'file1 ROOT \r\n'
+Info: changed( copy_info=True ) ...
+trunk/test/a/file1.txt: action='A', kind=<node_kind.file>, text_mod=1, prop_mod=0 copyfrom_rev=0 copyfrom_path=None
+     contents: 'file1 A \r\n'
+trunk/test/file1.txt: action='A', kind=<node_kind.file>, text_mod=1, prop_mod=0 copyfrom_rev=0 copyfrom_path=None
+     contents: 'file1 ROOT \r\n'
+Info: list() ...
+/trunk: kind=<node_kind.dir>
+/trunk/test: kind=<node_kind.dir>
+/trunk/test/a: kind=<node_kind.dir>
+/trunk/test/a/file1.txt: kind=<node_kind.file>
+/trunk/test/file1.txt: kind=<node_kind.file>
+
+B:\ > rem  post_test_1.output end ------------------------------------------ 
+
+B:\ > rem Mod one file Mod one prop 
+
+B:\ > echo file1 ROOT ln 2  1>b:\wc\file1.txt 
+
+B:\ > c:\python27.win32\python.exe C:\wc\svn\pysvn\Extension\Examples\Client\svn_cmd.py --pysvn-testing 01.02.01 --config-dir b:\configdir propset svn:eol-style native b:\wc\a\file1.txt 
+property_added B:/wc/a/file1.txt
+
+B:\ > c:\python27.win32\python.exe C:\wc\svn\pysvn\Extension\Examples\Client\svn_cmd.py --pysvn-testing 01.02.01 --config-dir b:\configdir checkin -m "Mod one file Mod one prop" b:\wc 
+M B:/wc/a/file1.txt
+M B:/wc/file1.txt
+Revision 5
+
+B:\ > rem pre_test_1.output start ---------------------------------------- 
+
+B:\ > type b:\pre_test_1.output 
+c:\python27.win32\python.exe C:\wc\svn\pysvn\Extension\Tests\test_04_commit_hook_test_1.py pre-commit B:\repos 4-4  
+Info: pre-commit test 1
+Info: Transaction( B:\repos, 4-4) ...
+Info: revproplist() ...
+svn:author: barry
+svn:check-locks: true
+svn:date: 2013-07-01T19:43:14.635549Z
+svn:log: Mod one file Mod one prop
+Info: changed() ...
+trunk/test/a/file1.txt: action='R', kind=<node_kind.file>, text_mod=1, prop_mod=1
+     svn:eol-style: native
+     contents: 'file1 A \n'
+trunk/test/file1.txt: action='R', kind=<node_kind.file>, text_mod=1, prop_mod=0
+     contents: 'file1 ROOT ln 2 \r\n'
+Info: changed( copy_info=True ) ...
+trunk/test/a/file1.txt: action='R', kind=<node_kind.file>, text_mod=1, prop_mod=1 copyfrom_rev=0 copyfrom_path=None
+     svn:eol-style: native
+     contents: 'file1 A \n'
+trunk/test/file1.txt: action='R', kind=<node_kind.file>, text_mod=1, prop_mod=0 copyfrom_rev=0 copyfrom_path=None
+     contents: 'file1 ROOT ln 2 \r\n'
+Info: list() ...
+/trunk: kind=<node_kind.dir>
+/trunk/test: kind=<node_kind.dir>
+/trunk/test/a: kind=<node_kind.dir>
+/trunk/test/a/file1.txt: kind=<node_kind.file>
+/trunk/test/file1.txt: kind=<node_kind.file>
+
+B:\ > rem  pre_test_1.output end ------------------------------------------ 
+
+B:\ > rem post_test_1.output start ---------------------------------------- 
+
+B:\ > type b:\post_test_1.output 
+c:\python27.win32\python.exe C:\wc\svn\pysvn\Extension\Tests\test_04_commit_hook_test_1.py post-commit B:\repos 5 is_revision  
+Info: post-commit test 1
+Info: Transaction( B:\repos, 5, is_revision=True) ...
+Info: revproplist() ...
+svn:author: barry
+svn:date: 2013-07-01T19:43:14.744691Z
+svn:log: Mod one file Mod one prop
+Info: changed() ...
+trunk/test/a/file1.txt: action='R', kind=<node_kind.file>, text_mod=1, prop_mod=1
+     svn:eol-style: native
+     contents: 'file1 A \n'
+trunk/test/file1.txt: action='R', kind=<node_kind.file>, text_mod=1, prop_mod=0
+     contents: 'file1 ROOT ln 2 \r\n'
+Info: changed( copy_info=True ) ...
+trunk/test/a/file1.txt: action='R', kind=<node_kind.file>, text_mod=1, prop_mod=1 copyfrom_rev=0 copyfrom_path=None
+     svn:eol-style: native
+     contents: 'file1 A \n'
+trunk/test/file1.txt: action='R', kind=<node_kind.file>, text_mod=1, prop_mod=0 copyfrom_rev=0 copyfrom_path=None
+     contents: 'file1 ROOT ln 2 \r\n'
+Info: list() ...
+/trunk: kind=<node_kind.dir>
+/trunk/test: kind=<node_kind.dir>
+/trunk/test/a: kind=<node_kind.dir>
+/trunk/test/a/file1.txt: kind=<node_kind.file>
+/trunk/test/file1.txt: kind=<node_kind.file>
+
+B:\ > rem  post_test_1.output end ------------------------------------------ 
+
+B:\ > rem Delete one file 
+
+B:\ > c:\python27.win32\python.exe C:\wc\svn\pysvn\Extension\Examples\Client\svn_cmd.py --pysvn-testing 01.02.01 --config-dir b:\configdir rm b:\wc\a\file1.txt 
+D B:/wc/a/file1.txt
+
+B:\ > c:\python27.win32\python.exe C:\wc\svn\pysvn\Extension\Examples\Client\svn_cmd.py --pysvn-testing 01.02.01 --config-dir b:\configdir checkin -m "Delete one file" b:\wc 
+D B:/wc/a/file1.txt
+Revision 6
+
+B:\ > rem pre_test_1.output start ---------------------------------------- 
+
+B:\ > type b:\pre_test_1.output 
+c:\python27.win32\python.exe C:\wc\svn\pysvn\Extension\Tests\test_04_commit_hook_test_1.py pre-commit B:\repos 5-5  
+Info: pre-commit test 1
+Info: Transaction( B:\repos, 5-5) ...
+Info: revproplist() ...
+svn:author: barry
+svn:check-locks: true
+svn:date: 2013-07-01T19:43:15.025342Z
+svn:log: Delete one file
+Info: changed() ...
+trunk/test/a/file1.txt: action='D', kind=<node_kind.file>, text_mod=0, prop_mod=0
+Info: changed( copy_info=True ) ...
+trunk/test/a/file1.txt: action='D', kind=<node_kind.file>, text_mod=0, prop_mod=0 copyfrom_rev=0 copyfrom_path=None
+Info: list() ...
+/trunk: kind=<node_kind.dir>
+/trunk/test: kind=<node_kind.dir>
+/trunk/test/a: kind=<node_kind.dir>
+/trunk/test/file1.txt: kind=<node_kind.file>
+
+B:\ > rem  pre_test_1.output end ------------------------------------------ 
+
+B:\ > rem post_test_1.output start ---------------------------------------- 
+
+B:\ > type b:\post_test_1.output 
+c:\python27.win32\python.exe C:\wc\svn\pysvn\Extension\Tests\test_04_commit_hook_test_1.py post-commit B:\repos 6 is_revision  
+Info: post-commit test 1
+Info: Transaction( B:\repos, 6, is_revision=True) ...
+Info: revproplist() ...
+svn:author: barry
+svn:date: 2013-07-01T19:43:15.118892Z
+svn:log: Delete one file
+Info: changed() ...
+trunk/test/a/file1.txt: action='D', kind=<node_kind.file>, text_mod=0, prop_mod=0
+Info: changed( copy_info=True ) ...
+trunk/test/a/file1.txt: action='D', kind=<node_kind.file>, text_mod=0, prop_mod=0 copyfrom_rev=0 copyfrom_path=None
+Info: list() ...
+/trunk: kind=<node_kind.dir>
+/trunk/test: kind=<node_kind.dir>
+/trunk/test/a: kind=<node_kind.dir>
+/trunk/test/file1.txt: kind=<node_kind.file>
+
+B:\ > rem  post_test_1.output end ------------------------------------------ 
+
+B:\ > endlocal

@@ -1,0 +1,35 @@
+WorkDir: L:\wc\pysvn\trunk\pysvn\Extension
+PYTHON: c:\python23\python.exe
+
+L:\wc\pysvn\trunk\pysvn\Extension\Tests >setlocal
+
+L:\wc\pysvn\trunk\pysvn\Extension\Tests >mkdir testroot-03 
+
+L:\wc\pysvn\trunk\pysvn\Extension\Tests >subst b: L:\wc\pysvn\trunk\pysvn\Extension\Tests\testroot-03 
+
+L:\wc\pysvn\trunk\pysvn\Extension\Tests >mkdir b:\configdir 
+
+L:\wc\pysvn\trunk\pysvn\Extension\Tests >cd testroot-03 
+
+L:\wc\pysvn\trunk\pysvn\Extension\Tests\testroot-03 >c:\python23\python.exe ..\test_callbacks.py 
+Info: Client created
+Info: Expecting error callback_get_login required
+Info: passed
+Info: Expecting error unhandled exception in callback_get_login
+Info: passed
+Info: Expecting error callback_get_log_message required
+Info: passed
+Info: Expecting error unhandled exception in callback_get_log_message
+Info: passed
+Info: Expecting error None
+Info: Passed 4
+Traceback (most recent call last):
+  File "..\test_callbacks.py", line 79, in get_login_bad
+    return retcode, username, password, save
+NameError: global name 'retcode' is not defined
+Traceback (most recent call last):
+  File "..\test_callbacks.py", line 86, in get_log_message_bad
+    return bad_var
+NameError: global name 'bad_var' is not defined
+
+L:\wc\pysvn\trunk\pysvn\Extension\Tests\testroot-03 >endlocal

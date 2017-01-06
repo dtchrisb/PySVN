@@ -1,0 +1,93 @@
+WorkDir: C:\Users\barry\wc\svn\PySVN\Extension
+PYTHON: c:\python34.win32\python.exe
+Username: barry
+Info: PYSVN CMD c:\python34.win32\python.exe C:\Users\barry\wc\svn\PySVN\Extension\Examples\Client\svn_cmd.py --pysvn-testing 01.03.00 --config-dir b:\configdir
+
+Info: CMD mkdir testroot-07
+
+Info: CMD subst b: C:\Users\barry\wc\svn\PySVN\Extension\Tests\testroot-07
+
+Info: CMD cd /d b:\
+
+Info: CMD svnadmin create b:/repos
+Info: Setup - mkdir
+
+Info: PYSVN CMD mkdir file:///b:/repos/trunk -m "test-07 add trunk"
+
+Info: PYSVN CMD mkdir file:///b:/repos/trunk/test -m "test-07 add test"
+Info: Setup - checkout wc1
+
+Info: PYSVN CMD checkout file:///b:/repos/trunk b:/wc1
+A B:/wc1/test
+U B:/wc1
+update_started B:/wc1
+Checked out revision 2
+
+Info: CMD cd /d b:/wc1/test
+Info: Setup - add files
+Info: Create File file_a1.txt - test add file 1     
+
+Info: PYSVN CMD add file_a1.txt
+A B:/wc1/test/file_a1.txt
+
+Info: PYSVN CMD checkin -m "commit added files"
+A B:/wc1/test/file_a1.txt
+Revision 3
+Info: Create File file_a2.txt - test add file 2     
+
+Info: PYSVN CMD add file_a2.txt
+A B:/wc1/test/file_a2.txt
+
+Info: PYSVN CMD checkin -m "commit added files"
+A B:/wc1/test/file_a2.txt
+Revision 4
+Info: Create File file_b1.txt - test add file 1     
+
+Info: PYSVN CMD add file_b1.txt
+A B:/wc1/test/file_b1.txt
+
+Info: PYSVN CMD checkin -m "commit added files"
+A B:/wc1/test/file_b1.txt
+Revision 5
+Info: Create File file_b2.txt - test add file 2     
+
+Info: PYSVN CMD add file_b2.txt
+A B:/wc1/test/file_b2.txt
+
+Info: PYSVN CMD checkin -m "commit added files"
+A B:/wc1/test/file_b2.txt
+Revision 6
+
+Info: PYSVN CMD status --verbose b:/wc1
+               2      2 barry          B:\wc1
+               2      2 barry          B:\wc1\test
+               3      3 barry          B:\wc1\test\file_a1.txt
+               4      4 barry          B:\wc1\test\file_a2.txt
+               5      5 barry          B:\wc1\test\file_b1.txt
+               6      6 barry          B:\wc1\test\file_b2.txt
+Info: running test_07_copy2
+Info: Copy2 with no revision and no peg_revision
+Info: Copy2 with no peg_revision
+Info: Copy2
+Info: Copy2 will raise error
+Info: Error: 'Operation does not support multiple sources'
+Info: Code: 195014, Message: 'Operation does not support multiple sources'
+Info: running test_07_move2
+Info: Move2 will succeed
+Info: Move2 will raise error
+Info: Error: 'Operation does not support multiple sources'
+Info: Code: 195014, Message: 'Operation does not support multiple sources'
+Info: running test_07_changelist
+After add_to_changelist show all
+   changelist-one B:/wc1/test/file_a1.txt
+   changelist-two B:/wc1/test/file_a2.txt
+   changelist-one B:/wc1/test/file_b1.txt
+   changelist-two B:/wc1/test/file_b2.txt
+After add_to_changelist show changelist-two
+   changelist-two B:/wc1/test/file_a2.txt
+   changelist-two B:/wc1/test/file_b2.txt
+After remove_from_changelists all changelist-two show all
+   changelist-one B:/wc1/test/file_a1.txt
+   changelist-one B:/wc1/test/file_b1.txt
+After remove_from_changelists all show all
+   changelist-one B:/wc1/test/file_b1.txt

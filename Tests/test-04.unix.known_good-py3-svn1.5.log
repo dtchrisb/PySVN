@@ -1,0 +1,129 @@
+WorkDir: /Users/barry/BuildTemp/Darwin_body/svn-1.5.6/pysvn/py31
+PYTHON: /Library/Frameworks/Python.framework/Versions/3.1/Resources/Python.app/Contents/MacOS/Python
+Username: barry
+Info: Command: mkdir testroot-04
+Info: Command: cd testroot-04
+Info: Command: mkdir tmp
+Info: Command: svnadmin create /Users/barry/BuildTemp/Darwin_body/svn-1.5.6/pysvn/py31/Tests/testroot-04/repos
+Info: Testing - mkdir
+Info: Command: /Library/Frameworks/Python.framework/Versions/3.1/Resources/Python.app/Contents/MacOS/Python /Users/barry/BuildTemp/Darwin_body/svn-1.5.6/pysvn/py31/Examples/Client/svn_cmd.py --pysvn-testing 01.01.00 --config-dir /Users/barry/BuildTemp/Darwin_body/svn-1.5.6/pysvn/py31/Tests/testroot-04/configdir mkdir file:///Users/barry/BuildTemp/Darwin_body/svn-1.5.6/pysvn/py31/Tests/testroot-04/repos/trunk -m test-04 add trunk
+Info: Command: /Library/Frameworks/Python.framework/Versions/3.1/Resources/Python.app/Contents/MacOS/Python /Users/barry/BuildTemp/Darwin_body/svn-1.5.6/pysvn/py31/Examples/Client/svn_cmd.py --pysvn-testing 01.01.00 --config-dir /Users/barry/BuildTemp/Darwin_body/svn-1.5.6/pysvn/py31/Tests/testroot-04/configdir mkdir file:///Users/barry/BuildTemp/Darwin_body/svn-1.5.6/pysvn/py31/Tests/testroot-04/repos/trunk/test -m test-04 add test
+Info: Install hooks
+Info: Command: /Library/Frameworks/Python.framework/Versions/3.1/Resources/Python.app/Contents/MacOS/Python /Users/barry/BuildTemp/Darwin_body/svn-1.5.6/pysvn/py31/Examples/Client/svn_cmd.py --pysvn-testing 01.01.00 --config-dir /Users/barry/BuildTemp/Darwin_body/svn-1.5.6/pysvn/py31/Tests/testroot-04/configdir mkdir file:///Users/barry/BuildTemp/Darwin_body/svn-1.5.6/pysvn/py31/Tests/testroot-04/repos/trunk/test/a -m pre-commit test 1
+Info: test_1.output start ----------------------------------------
+/Library/Frameworks/Python.framework/Versions/3.1/Resources/Python.app/Contents/MacOS/Python /Users/barry/BuildTemp/Darwin_body/svn-1.5.6/pysvn/py31/Tests/test_04_pre_commit_test_1.py /Users/barry/BuildTemp/Darwin_body/svn-1.5.6/pysvn/py31/Tests/testroot-04/repos 2-2
+Info: pre commit test 1
+Info: Transaction( /Users/barry/BuildTemp/Darwin_body/svn-1.5.6/pysvn/py31/Tests/testroot-04/repos, 2-2) ...
+Info: revproplist() ...
+svn:log: pre-commit test 1
+svn:check-locks: true
+svn:author: barry
+svn:date: 2009-09-20T12:11:45.157837Z
+Info: changed() ...
+trunk/test/a: action='A', kind=<node_kind.dir>, text_mod=0, prop_mod=0
+Info: changed( copy_info=True ) ...
+trunk/test/a: action='A', kind=<node_kind.dir>, text_mod=0, prop_mod=0 copyfrom_rev=0 copyfrom_path=None
+Info: test_1.output end ------------------------------------------
+Info: Add two files
+Info: Command: /Library/Frameworks/Python.framework/Versions/3.1/Resources/Python.app/Contents/MacOS/Python /Users/barry/BuildTemp/Darwin_body/svn-1.5.6/pysvn/py31/Examples/Client/svn_cmd.py --pysvn-testing 01.01.00 --config-dir /Users/barry/BuildTemp/Darwin_body/svn-1.5.6/pysvn/py31/Tests/testroot-04/configdir checkout file:///Users/barry/BuildTemp/Darwin_body/svn-1.5.6/pysvn/py31/Tests/testroot-04/repos/trunk/test /Users/barry/BuildTemp/Darwin_body/svn-1.5.6/pysvn/py31/Tests/testroot-04/wc
+A /Users/barry/BuildTemp/Darwin_body/svn-1.5.6/pysvn/py31/Tests/testroot-04/wc/a
+U /Users/barry/BuildTemp/Darwin_body/svn-1.5.6/pysvn/py31/Tests/testroot-04/wc
+Checked out revision 3
+Info: Command: /Library/Frameworks/Python.framework/Versions/3.1/Resources/Python.app/Contents/MacOS/Python /Users/barry/BuildTemp/Darwin_body/svn-1.5.6/pysvn/py31/Examples/Client/svn_cmd.py --pysvn-testing 01.01.00 --config-dir /Users/barry/BuildTemp/Darwin_body/svn-1.5.6/pysvn/py31/Tests/testroot-04/configdir add /Users/barry/BuildTemp/Darwin_body/svn-1.5.6/pysvn/py31/Tests/testroot-04/wc/file1.txt
+A /Users/barry/BuildTemp/Darwin_body/svn-1.5.6/pysvn/py31/Tests/testroot-04/wc/file1.txt
+Info: Command: /Library/Frameworks/Python.framework/Versions/3.1/Resources/Python.app/Contents/MacOS/Python /Users/barry/BuildTemp/Darwin_body/svn-1.5.6/pysvn/py31/Examples/Client/svn_cmd.py --pysvn-testing 01.01.00 --config-dir /Users/barry/BuildTemp/Darwin_body/svn-1.5.6/pysvn/py31/Tests/testroot-04/configdir add /Users/barry/BuildTemp/Darwin_body/svn-1.5.6/pysvn/py31/Tests/testroot-04/wc/a/file1.txt
+A /Users/barry/BuildTemp/Darwin_body/svn-1.5.6/pysvn/py31/Tests/testroot-04/wc/a/file1.txt
+Info: Command: /Library/Frameworks/Python.framework/Versions/3.1/Resources/Python.app/Contents/MacOS/Python /Users/barry/BuildTemp/Darwin_body/svn-1.5.6/pysvn/py31/Examples/Client/svn_cmd.py --pysvn-testing 01.01.00 --config-dir /Users/barry/BuildTemp/Darwin_body/svn-1.5.6/pysvn/py31/Tests/testroot-04/configdir checkin -m Add two files /Users/barry/BuildTemp/Darwin_body/svn-1.5.6/pysvn/py31/Tests/testroot-04/wc
+A wc/a/file1.txt
+A wc/file1.txt
+Revision 4
+Info: test_1.output start ----------------------------------------
+/Library/Frameworks/Python.framework/Versions/3.1/Resources/Python.app/Contents/MacOS/Python /Users/barry/BuildTemp/Darwin_body/svn-1.5.6/pysvn/py31/Tests/test_04_pre_commit_test_1.py /Users/barry/BuildTemp/Darwin_body/svn-1.5.6/pysvn/py31/Tests/testroot-04/repos 3-3
+Info: pre commit test 1
+Info: Transaction( /Users/barry/BuildTemp/Darwin_body/svn-1.5.6/pysvn/py31/Tests/testroot-04/repos, 3-3) ...
+Info: revproplist() ...
+svn:log: Add two files
+svn:check-locks: true
+svn:author: barry
+svn:date: 2009-09-20T12:11:46.417625Z
+Info: changed() ...
+trunk/test/a/file1.txt: action='A', kind=<node_kind.file>, text_mod=1, prop_mod=0
+     contents: 'file1 A\n'
+trunk/test/file1.txt: action='A', kind=<node_kind.file>, text_mod=1, prop_mod=0
+     contents: 'file1 ROOT\n'
+Info: changed( copy_info=True ) ...
+trunk/test/a/file1.txt: action='A', kind=<node_kind.file>, text_mod=1, prop_mod=0 copyfrom_rev=0 copyfrom_path=None
+     contents: 'file1 A\n'
+trunk/test/file1.txt: action='A', kind=<node_kind.file>, text_mod=1, prop_mod=0 copyfrom_rev=0 copyfrom_path=None
+     contents: 'file1 ROOT\n'
+Info: test_1.output end ------------------------------------------
+Info: Mod one file Mod one prop
+Info: Command: /Library/Frameworks/Python.framework/Versions/3.1/Resources/Python.app/Contents/MacOS/Python /Users/barry/BuildTemp/Darwin_body/svn-1.5.6/pysvn/py31/Examples/Client/svn_cmd.py --pysvn-testing 01.01.00 --config-dir /Users/barry/BuildTemp/Darwin_body/svn-1.5.6/pysvn/py31/Tests/testroot-04/configdir propset svn:eol-style native /Users/barry/BuildTemp/Darwin_body/svn-1.5.6/pysvn/py31/Tests/testroot-04/wc/a/file1.txt
+Info: Command: /Library/Frameworks/Python.framework/Versions/3.1/Resources/Python.app/Contents/MacOS/Python /Users/barry/BuildTemp/Darwin_body/svn-1.5.6/pysvn/py31/Examples/Client/svn_cmd.py --pysvn-testing 01.01.00 --config-dir /Users/barry/BuildTemp/Darwin_body/svn-1.5.6/pysvn/py31/Tests/testroot-04/configdir checkin -m Mod one file Mod one prop /Users/barry/BuildTemp/Darwin_body/svn-1.5.6/pysvn/py31/Tests/testroot-04/wc
+M wc/a/file1.txt
+M wc/file1.txt
+Revision 5
+Info: test_1.output start ----------------------------------------
+/Library/Frameworks/Python.framework/Versions/3.1/Resources/Python.app/Contents/MacOS/Python /Users/barry/BuildTemp/Darwin_body/svn-1.5.6/pysvn/py31/Tests/test_04_pre_commit_test_1.py /Users/barry/BuildTemp/Darwin_body/svn-1.5.6/pysvn/py31/Tests/testroot-04/repos 4-4
+Info: pre commit test 1
+Info: Transaction( /Users/barry/BuildTemp/Darwin_body/svn-1.5.6/pysvn/py31/Tests/testroot-04/repos, 4-4) ...
+Info: revproplist() ...
+svn:log: Mod one file Mod one prop
+svn:check-locks: true
+svn:author: barry
+svn:date: 2009-09-20T12:11:47.298856Z
+Info: changed() ...
+trunk/test/a/file1.txt: action='R', kind=<node_kind.file>, text_mod=0, prop_mod=1
+     svn:eol-style: native
+     contents: 'file1 A\n'
+trunk/test/file1.txt: action='R', kind=<node_kind.file>, text_mod=1, prop_mod=0
+     contents: 'file1 ROOT ln 2\n'
+Info: changed( copy_info=True ) ...
+trunk/test/a/file1.txt: action='R', kind=<node_kind.file>, text_mod=0, prop_mod=1 copyfrom_rev=0 copyfrom_path=None
+     svn:eol-style: native
+     contents: 'file1 A\n'
+trunk/test/file1.txt: action='R', kind=<node_kind.file>, text_mod=1, prop_mod=0 copyfrom_rev=0 copyfrom_path=None
+     contents: 'file1 ROOT ln 2\n'
+Info: test_1.output end ------------------------------------------
+Info: Delete one file
+Info: Command: /Library/Frameworks/Python.framework/Versions/3.1/Resources/Python.app/Contents/MacOS/Python /Users/barry/BuildTemp/Darwin_body/svn-1.5.6/pysvn/py31/Examples/Client/svn_cmd.py --pysvn-testing 01.01.00 --config-dir /Users/barry/BuildTemp/Darwin_body/svn-1.5.6/pysvn/py31/Tests/testroot-04/configdir rm /Users/barry/BuildTemp/Darwin_body/svn-1.5.6/pysvn/py31/Tests/testroot-04/wc/a/file1.txt
+D /Users/barry/BuildTemp/Darwin_body/svn-1.5.6/pysvn/py31/Tests/testroot-04/wc/a/file1.txt
+Info: Command: /Library/Frameworks/Python.framework/Versions/3.1/Resources/Python.app/Contents/MacOS/Python /Users/barry/BuildTemp/Darwin_body/svn-1.5.6/pysvn/py31/Examples/Client/svn_cmd.py --pysvn-testing 01.01.00 --config-dir /Users/barry/BuildTemp/Darwin_body/svn-1.5.6/pysvn/py31/Tests/testroot-04/configdir checkin -m Delete one file /Users/barry/BuildTemp/Darwin_body/svn-1.5.6/pysvn/py31/Tests/testroot-04/wc
+D wc/a/file1.txt
+Revision 6
+Info: test_1.output start ----------------------------------------
+/Library/Frameworks/Python.framework/Versions/3.1/Resources/Python.app/Contents/MacOS/Python /Users/barry/BuildTemp/Darwin_body/svn-1.5.6/pysvn/py31/Tests/test_04_pre_commit_test_1.py /Users/barry/BuildTemp/Darwin_body/svn-1.5.6/pysvn/py31/Tests/testroot-04/repos 5-5
+Info: pre commit test 1
+Info: Transaction( /Users/barry/BuildTemp/Darwin_body/svn-1.5.6/pysvn/py31/Tests/testroot-04/repos, 5-5) ...
+Info: revproplist() ...
+svn:log: Delete one file
+svn:check-locks: true
+svn:author: barry
+svn:date: 2009-09-20T12:11:48.318341Z
+Info: changed() ...
+trunk/test/a/file1.txt: action='D', kind=<node_kind.file>, text_mod=0, prop_mod=0
+Info: changed( copy_info=True ) ...
+trunk/test/a/file1.txt: action='D', kind=<node_kind.file>, text_mod=0, prop_mod=0 copyfrom_rev=0 copyfrom_path=None
+Info: test_1.output end ------------------------------------------
+Info: Copy one file
+Info: Command: /Library/Frameworks/Python.framework/Versions/3.1/Resources/Python.app/Contents/MacOS/Python /Users/barry/BuildTemp/Darwin_body/svn-1.5.6/pysvn/py31/Examples/Client/svn_cmd.py --pysvn-testing 01.01.00 --config-dir /Users/barry/BuildTemp/Darwin_body/svn-1.5.6/pysvn/py31/Tests/testroot-04/configdir cp /Users/barry/BuildTemp/Darwin_body/svn-1.5.6/pysvn/py31/Tests/testroot-04/wc/file1.txt /Users/barry/BuildTemp/Darwin_body/svn-1.5.6/pysvn/py31/Tests/testroot-04/wc/file1copy.txt
+A /Users/barry/BuildTemp/Darwin_body/svn-1.5.6/pysvn/py31/Tests/testroot-04/wc/file1copy.txt
+Info: Command: /Library/Frameworks/Python.framework/Versions/3.1/Resources/Python.app/Contents/MacOS/Python /Users/barry/BuildTemp/Darwin_body/svn-1.5.6/pysvn/py31/Examples/Client/svn_cmd.py --pysvn-testing 01.01.00 --config-dir /Users/barry/BuildTemp/Darwin_body/svn-1.5.6/pysvn/py31/Tests/testroot-04/configdir checkin -m Copy one file /Users/barry/BuildTemp/Darwin_body/svn-1.5.6/pysvn/py31/Tests/testroot-04/wc
+A wc/file1copy.txt
+Revision 7
+Info: test_1.output start ----------------------------------------
+/Library/Frameworks/Python.framework/Versions/3.1/Resources/Python.app/Contents/MacOS/Python /Users/barry/BuildTemp/Darwin_body/svn-1.5.6/pysvn/py31/Tests/test_04_pre_commit_test_1.py /Users/barry/BuildTemp/Darwin_body/svn-1.5.6/pysvn/py31/Tests/testroot-04/repos 6-6
+Info: pre commit test 1
+Info: Transaction( /Users/barry/BuildTemp/Darwin_body/svn-1.5.6/pysvn/py31/Tests/testroot-04/repos, 6-6) ...
+Info: revproplist() ...
+svn:log: Copy one file
+svn:check-locks: true
+svn:author: barry
+svn:date: 2009-09-20T12:11:50.208276Z
+Info: changed() ...
+trunk/test/file1copy.txt: action='A', kind=<node_kind.file>, text_mod=0, prop_mod=0
+     contents: 'file1 ROOT ln 2\n'
+Info: changed( copy_info=True ) ...
+trunk/test/file1copy.txt: action='A', kind=<node_kind.file>, text_mod=0, prop_mod=0 copyfrom_rev=5 copyfrom_path='/trunk/test/file1.txt'
+     contents: 'file1 ROOT ln 2\n'
+Info: test_1.output end ------------------------------------------

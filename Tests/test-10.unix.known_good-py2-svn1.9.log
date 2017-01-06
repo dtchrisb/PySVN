@@ -1,0 +1,76 @@
+WorkDir: /Users/barry/wc/svn/pysvn-next/Extension
+PYTHON: /Library/Frameworks/Python.framework/Versions/2.7/Resources/Python.app/Contents/MacOS/Python
+Username: barry
+Info: CWD: /Users/barry/wc/svn/pysvn-next/Extension/Tests
+Info: Command: mkdir testroot-10
+Info: CWD: /Users/barry/wc/svn/pysvn-next/Extension/Tests
+Info: Command: cd testroot-10
+Info: CWD: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-10
+Info: Command: mkdir tmp
+Info: PYSVN command /Library/Frameworks/Python.framework/Versions/2.7/Resources/Python.app/Contents/MacOS/Python /Users/barry/wc/svn/pysvn-next/Extension/Examples/Client/svn_cmd.py --pysvn-testing 01.09.00 --config-dir /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-10/configdir
+Info: CWD: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-10
+Info: Command: svnadmin create /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-10/repos
+Info: Setup - mkdir
+Info: CWD: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-10
+Info: pysvn command: mkdir file:///Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-10/repos/trunk -m test-10 add trunk
+commit_finalizing .
+Info: Setup - checkout wc1
+Info: CWD: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-10
+Info: pysvn command: checkout file:///Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-10/repos/trunk /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-10/wc1
+update_started /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-10/wc1
+Checked out revision 1
+Info: CWD: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-10
+Info: Command: cd /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-10/wc1
+Info: Setup - add files and folders
+Info: CWD: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-10/wc1
+Info: pysvn command: mkdir folder1
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-10/wc1/folder1
+Info: CWD: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-10/wc1
+Info: pysvn command: propset svn:ignore *~ folder1
+property_added /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-10/wc1/folder1
+Info: CWD: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-10/wc1
+Info: pysvn command: add folder1/file-a.txt
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-10/wc1/folder1/file-a.txt
+Info: CWD: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-10/wc1
+Info: pysvn command: checkin -m commit added files
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-10/wc1/folder1
+A /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-10/wc1/folder1/file-a.txt
+commit_finalizing .
+Revision 2
+Info: vacuum no removes
+Info: CWD: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-10/wc1
+Info: pysvn command: status2 --verbose --no-ignore .
+               1      1 barry          .
+               2      2 barry          folder1
+               2      2 barry          folder1/file-a.txt
+?                                      folder1/file-a.txt~
+?                                      folder1/file-b.txt
+Info: CWD: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-10/wc1
+Info: pysvn command: vacuum
+Info: vacuum remove ignored
+Info: CWD: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-10/wc1
+Info: pysvn command: status2 --verbose --no-ignore .
+               1      1 barry          .
+               2      2 barry          folder1
+               2      2 barry          folder1/file-a.txt
+?                                      folder1/file-a.txt~
+?                                      folder1/file-b.txt
+Info: CWD: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-10/wc1
+Info: pysvn command: vacuum --remove-ignored-items
+D /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-10/wc1/folder1/file-a.txt~
+Info: vacuum remove versioned
+Info: CWD: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-10/wc1
+Info: pysvn command: status2 --verbose --no-ignore .
+               1      1 barry          .
+               2      2 barry          folder1
+               2      2 barry          folder1/file-a.txt
+?                                      folder1/file-b.txt
+Info: CWD: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-10/wc1
+Info: pysvn command: vacuum --remove-unversioned-items
+D /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-10/wc1/folder1/file-b.txt
+Info: check final state
+Info: CWD: /Users/barry/wc/svn/pysvn-next/Extension/Tests/testroot-10/wc1
+Info: pysvn command: status2 --verbose --no-ignore .
+               1      1 barry          .
+               2      2 barry          folder1
+               2      2 barry          folder1/file-a.txt

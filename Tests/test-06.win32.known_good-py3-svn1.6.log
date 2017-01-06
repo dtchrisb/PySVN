@@ -1,0 +1,84 @@
+WorkDir: C:\wc\svn\pysvn\Extension
+PYTHON: c:\python32.win32\python.exe
+Username: barry
+Info: PYSVN CMD c:\python32.win32\python.exe C:\wc\svn\pysvn\Extension\Examples\Client\svn_cmd.py --pysvn-testing 01.03.00 --config-dir b:\configdir
+
+Info: CMD mkdir testroot-06
+
+Info: CMD subst b: C:\wc\svn\pysvn\Extension\Tests\testroot-06
+
+Info: CMD cd /d b:\
+
+Info: CMD svnadmin create b:/repos
+Info: Setup - mkdir
+
+Info: PYSVN CMD mkdir file:///b:/repos/trunk -m "test-06 add trunk"
+
+Info: PYSVN CMD mkdir file:///b:/repos/trunk/test -m "test-06 add test"
+Info: Setup - checkout wc1
+
+Info: PYSVN CMD checkout file:///b:/repos/trunk b:\wc1
+A b:/wc1/test
+U b:/wc1
+Checked out revision 2
+
+Info: CMD cd b:\wc1\test
+Info: Setup - add files
+Info: Create File file1.txt - test add file 1     
+Info: Create File file2.txt - test add file 2     
+
+Info: PYSVN CMD add file1.txt
+A file1.txt
+
+Info: PYSVN CMD add file2.txt
+A file2.txt
+
+Info: PYSVN CMD checkin -m "commit added files"
+A b:/wc1/test/file1.txt
+A b:/wc1/test/file2.txt
+Revision 3
+Info: Test - info of path
+
+Info: PYSVN CMD info file1.txt
+Path: file1.txt
+Name: file1.txt
+Url: file:///B:/repos/trunk/test/file1.txt
+Repository: file:///B:/repos
+Repository UUID: 4c6ac313-389f-6c43-b318-771df97df98e
+Revision: 3
+Node kind: file
+Schedule: normal
+Last Changed Author: barry
+Last Changed Rev: 3
+Last Changed Date: 28-Feb-2012 13:02:07
+Text Last Updated: 28-Feb-2012 13:02:06
+Checksum: 1e41522fd7b6b6325667c8554893a6db
+Info: Test - info2 of path
+
+Info: PYSVN CMD info2 file1.txt
+
+Path: file1.txt
+Url: file:///B:/repos/trunk/test/file1.txt
+Revision: 3
+Repository root_URL: file:///B:/repos
+Repository UUID: 4c6ac313-389f-6c43-b318-771df97df98e
+Last changed author: barry
+Last Changed Date: 28-Feb-2012 13:02:07
+Last changed revision: 3
+Node kind: file
+Schedule: normal
+Text Last Updated: 28-Feb-2012 13:02:06
+Checksum: 1e41522fd7b6b6325667c8554893a6db
+Info: Test - info2 of URL
+
+Info: PYSVN CMD info2 --revision HEAD file:///b:/repos/trunk/test/file1.txt
+
+Path: file1.txt
+Url: file:///B:/repos/trunk/test/file1.txt
+Revision: 3
+Repository root_URL: file:///B:/repos
+Repository UUID: 4c6ac313-389f-6c43-b318-771df97df98e
+Last changed author: barry
+Last Changed Date: 28-Feb-2012 13:02:07
+Last changed revision: 3
+Node kind: file

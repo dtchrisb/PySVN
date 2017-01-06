@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<style type="text/css">
+h1, h2, h3 {color: #8080ff;}
+code {background-color: #dddddd; }
+
+</style>
+<title>Building pysvn Extension</title>
+</head>
+<body>
+
+<h1>Building pysvn Extension</h1>
+
+<h2>Prerequisites</h2>
+
+<p>To build pysvn you will require:</p>
+<ul>
+<li><a href="http://www.python.org">Python</a> 2.6 or later with these options:
+<ul>
+<li>Python runtime package
+<li>Python development package
+<li>Python pyexpat package
+</ul>
+</li>
+<li><a href="http://subversion.tigris.org">subversion</a> 1.7.x or 1.8.x with these options:
+<ul>
+<li>Subversion client package
+<li>Subversion development package
+</ul>
+</li>
+<li><a href="http://sourceforge.net/project/showfiles.php?group_id=3180">PyCXX V6.2.4</a> to build against Python 2 or Python 3 which is included in the pysvn source kit.</li>
+</ul>
+<p>Some distributions will split python and subversion into more the one package.</p>
+<p>You will need to find all the packages that give you the options listed above.</p>
+
+<h3>Building on win32</h3>
+
+<p>PYSVN sources have been updated to build on Windows 7 64bit version.
+Expect issues on older windows and 32but windows.</p>
+
+<p>These instructions assume you have Microsoft Visual C++ 2008 (9.0) to compile the code
+and <a href="http://www.jrsoftware.org/">INNO</a> 5 to create the installation kit.</p>
+
+<p>You must build with MSVC 2008 (9.0) for Python 2.6 or later and python 3.0 or later.</p>
+
+<ol>
+<li>Build subversion (tested with and svn 1.7.11 and 1.8.1)</li>
+<li>Fetch and expand the pysvn source code into <em>extdir</em></li>
+<li>Expand pycxx-6.2.4.tar.gz into <em>extdir</em>\Import if not using a source kit</li>
+<li>Edit Builder\builder_custom_init.cmd to match the locations of the sources.</li>
+<li><code>cd Builder</code></li>
+<li><code>builder_custom_init.cmd</code></li>
+<li><code>cd ..\Source</code>
+<li><code>python setup.py configure ...</code> (add any configure options required to make it find the required libraries).</li>
+<li><code>nmake</code></li>
+<li><code>cd ..\Test</code></li>
+<li><code>nmake</code></li>
+<li><code>cd ..\Kit\Win32-1.7</code></li>
+<li><code>nmake</code></li>
+</ol>
+
+<p>To install the built kit</p>
+
+<ol>
+<li>Uninstall any previous kit (control panel's Add/Remove programs)</li>
+<li><code>nmake -f win32.mak install</code></li>
+</ol>
+
+<h3>Building on unix and Mac OS X systems.</h3>
+
+<ol>
+<li>Install subversion.
+<br />When installing from packages you will need to install the <i>devel</i> packages as well. For example on Fedora/Redhat subversion-devel, apr-devel, apr-util-devel and their dependancies.</li>
+<li>Get the pysvn source code</li>
+<li>For Python 2 or Python 3 builds: <code>tar xzf pycxx-6.2.4.tar.gz</code> into <em>extdir</em>/Import if not using a source kit</li>
+<li><code>cd Source</code></li>
+<li>For Python 2.6 or earlier builds: backport the PySVN code using <code>python setup.py backport</code></li>
+<li>Create the Makefile using <code>python setup.py configure</code></li>
+<li><code>make</code></li>
+<li><code>cd Tests</code></li>
+<li>Test pysvn by running <code>make</code></li>
+</ol>
+
+<p>Install pysvn by copying the following from Extension/Source
+to python site-specific directory.</p>
+<ul>
+<li><code>mkdir <em>python-libdir</em>/site-packages/pysvn</code></li>
+<li><code>cp pysvn/__init__.py <em>python-libdir</em>/site-packages/pysvn</code></li>
+<li><code>cp pysvn/_pysvn*.so <em>python-libdir</em>/site-packages/pysvn</code></li>
+</ul>
+</body>
+</html>

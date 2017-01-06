@@ -1,0 +1,207 @@
+WorkDir: L:\wc\pysvn\trunk\pysvn\Extension
+PYTHON: c:\python24\python.exe
+Username: barry
+Info: PYSVN CMD c:\python24\python.exe L:\wc\pysvn\trunk\pysvn\Extension\Examples\Client\svn_cmd.py --pysvn-testing 01.03.00 --config-dir b:\configdir
+
+Info: CMD mkdir testroot-05
+
+Info: CMD subst b: L:\wc\pysvn\trunk\pysvn\Extension\Tests\testroot-05
+
+Info: CMD cd /d b:\
+
+Info: CMD svnadmin create b:/repos
+Info: Setup - mkdir
+
+Info: PYSVN CMD mkdir file:///b:/repos/trunk -m "test-05 add trunk"
+
+Info: PYSVN CMD mkdir file:///b:/repos/trunk/test -m "test-05 add test"
+Info: Setup - checkout wc1
+
+Info: PYSVN CMD checkout file:///b:/repos/trunk b:\wc1
+A b:/wc1/test
+U b:/wc1
+Checked out revision 2
+
+Info: CMD cd b:\wc1\test
+Info: Setup - add files
+Info: Create File file1.txt - test add file 1     
+Info: Create File file2.txt - test add file 2     
+
+Info: PYSVN CMD add file1.txt
+A file1.txt
+
+Info: PYSVN CMD add file2.txt
+A file2.txt
+
+Info: PYSVN CMD checkin -m "commit added files"
+A test/file1.txt
+A test/file2.txt
+Revision 3
+Info: Setup - checkout wc2
+
+Info: PYSVN CMD checkout file:///b:/repos/trunk b:\wc2
+A b:/wc2/test
+A b:/wc2/test/file1.txt
+A b:/wc2/test/file2.txt
+U b:/wc2
+Checked out revision 3
+Info: Test - status of unlocked files
+
+Info: PYSVN CMD status --verbose b:\wc1
+               2      2 barry          b:\wc1
+               2      2 barry          b:\wc1\test
+               3      3 barry          b:\wc1\test\file1.txt
+               3      3 barry          b:\wc1\test\file2.txt
+Info: Test - info2 of unlocked files
+
+Info: PYSVN CMD info2 b:\wc1\test\file1.txt
+
+Path: b:/wc1/test/file1.txt
+Url: file:///b:/repos/trunk/test/file1.txt
+Revision: 3
+Repository root_URL: file:///b:/repos
+Repository UUID: cc4484c8-542a-2742-be80-984bdf6d37c5
+Last changed author: barry
+Last Changed Date: 23-Sep-2006 16:21:22
+Last changed revision: 3
+Node kind: file
+Schedule: normal
+Text Last Updated: 23-Sep-2006 16:21:21
+Checksum: 1e41522fd7b6b6325667c8554893a6db
+Info: Test - lock unlocked file
+
+Info: PYSVN CMD lock b:\wc1\test\file1.txt
+locked file1.txt
+Info: Test - status of locked files
+
+Info: PYSVN CMD status --verbose b:\wc1
+               2      2 barry          b:\wc1
+               2      2 barry          b:\wc1\test
+     K         3      3 barry          b:\wc1\test\file1.txt
+               3      3 barry          b:\wc1\test\file2.txt
+Info: Test - info2 of locked files
+
+Info: PYSVN CMD info2 b:\wc1\test\file1.txt
+
+Path: b:/wc1/test/file1.txt
+Url: file:///b:/repos/trunk/test/file1.txt
+Revision: 3
+Repository root_URL: file:///b:/repos
+Repository UUID: cc4484c8-542a-2742-be80-984bdf6d37c5
+Last changed author: barry
+Last Changed Date: 23-Sep-2006 16:21:22
+Last changed revision: 3
+Node kind: file
+Lock Owner: barry
+Lock Creation Date: 23-Sep-2006 16:21:24
+Lock Token: opaquelocktoken:01ee0e7b-022a-8b4d-8cd4-82d52a2125a2
+Lock Comment:
+Schedule: normal
+Text Last Updated: 23-Sep-2006 16:21:21
+Checksum: 1e41522fd7b6b6325667c8554893a6db
+Info: Test - attempt to checkin over a locked file
+
+Info: CMD cd b:\wc2\test
+Info: Append File file1.txt - Change to file 1     
+Info: Append File file2.txt - Change to file 2     
+
+Info: PYSVN CMD commit -m "change when file locked in other wc" .
+M test/file1.txt
+M test/file2.txt
+Commit failed (details follow):
+Cannot verify lock on path '/trunk/test/file1.txt'; no matching lock-token available
+Info: Test - lock locked file
+
+Info: PYSVN CMD lock b:\wc2\test\file1.txt
+failed_lock file1.txt
+Info: Test - lock --force locked file
+
+Info: PYSVN CMD lock --force b:\wc2\test\file1.txt -m "Stealing lock"
+locked file1.txt
+Info: Test - info2 of locked files
+
+Info: PYSVN CMD info2 b:\wc2\test\file1.txt
+
+Path: b:/wc2/test/file1.txt
+Url: file:///b:/repos/trunk/test/file1.txt
+Revision: 3
+Repository root_URL: file:///b:/repos
+Repository UUID: cc4484c8-542a-2742-be80-984bdf6d37c5
+Last changed author: barry
+Last Changed Date: 23-Sep-2006 16:21:22
+Last changed revision: 3
+Node kind: file
+Lock Owner: barry
+Lock Creation Date: 23-Sep-2006 16:21:26
+Lock Token: opaquelocktoken:a24fb0d6-0286-0040-9fa4-2feb7c02c4fa
+Lock Comment:
+Stealing lock
+Schedule: normal
+Text Last Updated: 23-Sep-2006 16:21:23
+Checksum: 1e41522fd7b6b6325667c8554893a6db
+Info: Test - status of locked files
+
+Info: PYSVN CMD status --verbose b:\wc2
+               3      3 barry          b:\wc2
+               3      3 barry          b:\wc2\test
+M    K         3      3 barry          b:\wc2\test\file1.txt
+M              3      3 barry          b:\wc2\test\file2.txt
+Info: Test - commit with lock
+
+Info: PYSVN CMD commit -m "change when file locked in this wc" .
+M test/file1.txt
+M test/file2.txt
+Revision 4
+Info: Test - status of locked files
+
+Info: PYSVN CMD status --verbose b:\wc2
+               3      3 barry          b:\wc2
+               3      3 barry          b:\wc2\test
+     K         4      4 barry          b:\wc2\test\file1.txt
+               4      4 barry          b:\wc2\test\file2.txt
+Info: Test - unlock locked file
+
+Info: PYSVN CMD unlock b:\wc2\test\file1.txt
+unlocked file1.txt
+Info: Test - status of locked files
+
+Info: PYSVN CMD status --verbose b:\wc2
+               3      3 barry          b:\wc2
+               3      3 barry          b:\wc2\test
+               4      4 barry          b:\wc2\test\file1.txt
+               4      4 barry          b:\wc2\test\file2.txt
+Info: Test - status of locked files
+
+Info: PYSVN CMD status --verbose b:\wc1
+               2      2 barry          b:\wc1
+               2      2 barry          b:\wc1\test
+     K         3      3 barry          b:\wc1\test\file1.txt
+               3      3 barry          b:\wc1\test\file2.txt
+Info: Test - update with stolen lock
+
+Info: PYSVN CMD update b:\wc1\test
+U b:/wc1
+U b:/wc1/test
+U b:/wc1/test/file1.txt
+U b:/wc1/test/file2.txt
+Updated to revision 4
+Info: Test - status of locked files
+
+Info: PYSVN CMD status --verbose b:\wc1
+               2      2 barry          b:\wc1
+               4      4 barry          b:\wc1\test
+               4      4 barry          b:\wc1\test\file1.txt
+               4      4 barry          b:\wc1\test\file2.txt
+Info: Test - info2 of URL
+
+Info: PYSVN CMD info2 --revision HEAD file:///b:/repos/trunk/test/file1.txt
+
+Path: file1.txt
+Url: file:///b:/repos/trunk/test/file1.txt
+Revision: 4
+Repository root_URL: file:///b:/repos
+Repository UUID: cc4484c8-542a-2742-be80-984bdf6d37c5
+Last changed author: barry
+Last Changed Date: 23-Sep-2006 16:21:27
+Last changed revision: 4
+Node kind: file
